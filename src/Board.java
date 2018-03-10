@@ -16,23 +16,36 @@ import javax.swing.JComponent;
 
 public class Board extends JComponent
 {
-
+   // dimension of checkerboard square (25% bigger than checker)
 
    private final static int SQUAREDIM = (int) (Checker.getDimension() * 1.25);
 
-   
+   // dimension of checkerboard (width of 8 squares)
 
    private final int BOARDDIM = 8 * SQUAREDIM;
 
+   // preferred size of Board component
 
    private Dimension dimPrefSize;
 
+   // dragging flag -- set to true when user presses mouse button over checker
+   // and cleared to false when user releases mouse button
 
    private boolean inDrag = false;
 
    // displacement between drag start coordinates and checker center coordinates
 
-   
+   private int deltax, deltay;
+
+   // reference to positioned checker at start of drag
+
+   private PosCheck posCheck;
+
+   // center location of checker at start of drag
+
+   private int oldcx, oldcy;
+
+   // list of Checker objects and their initial positions
 
    private List<PosCheck> posChecks;
 
@@ -101,13 +114,132 @@ public class Board extends JComponent
 
                                 boolean valid = false;
                                 //Check for the valid move.
-                             
+                             for (PosCheck posCheck: posChecks)
+
+                                 if (Board.this.posCheck.checker.getType() == CheckerType.RED_REGULAR){
+
+                                     if(getLocIndex(oldcy) - getLocIndex(Board.this.posCheck.cy) == 1 &&
+                                               (getLocIndex(oldcx) - getLocIndex(Board.this.posCheck.cx) == 1 ||
+                                               getLocIndex(oldcx) - getLocIndex(Board.this.posCheck.cx) == -1)) {
+
+                                            valid = true;
+
+                                     }else if (getLocIndex(oldcy) - getLocIndex(Board.this.posCheck.cy) == 2 &&
+                                                  getLocIndex(oldcx) - getLocIndex(Board.this.posCheck.cx) == 2) {
+                                            if (getColorFromLocation((getLocIndex(oldcx) - 1), (getLocIndex(oldcy) - 1)) == CheckerColor.BLACK) {
+                                                valid = true;
+                                            }
+                                     }else if (getLocIndex(oldcy) - getLocIndex(Board.this.posCheck.cy) == 2 &&
+                                                  getLocIndex(oldcx) - getLocIndex(Board.this.posCheck.cx) == -2) {
+                                           if (getColorFromLocation((getLocIndex(oldcx) + 1), (getLocIndex(oldcy) - 1)) == CheckerColor.BLACK) {
+                                              valid = true;
+                                           }
+                                     }
+
+                                }else if(Board.this.posCheck.checker.getType() == CheckerType.RED_KING){
+                                     if((getLocIndex(oldcy) - getLocIndex(Board.this.posCheck.cy) == -1 ||
+                                             getLocIndex(oldcy) - getLocIndex(Board.this.posCheck.cy) == 1) &&(
+                                             (getLocIndex(oldcx) - getLocIndex(Board.this.posCheck.cx) == 1 ||
+                                                     getLocIndex(oldcx) - getLocIndex(Board.this.posCheck.cx) == -1))) {
+
+                                         valid = true;
+                                     }else if (getLocIndex(oldcy) - getLocIndex(Board.this.posCheck.cy) == -2 &&
+                                             getLocIndex(oldcx) - getLocIndex(Board.this.posCheck.cx) == 2) {
+                                         if (getColorFromLocation((getLocIndex(oldcx) - 1), (getLocIndex(oldcy) + 1)) == CheckerColor.BLACK) {
+                                             valid = true;
+                                         }
+                                     }else if (getLocIndex(oldcy) - getLocIndex(Board.this.posCheck.cy) == -2 &&
+                                             getLocIndex(oldcx) - getLocIndex(Board.this.posCheck.cx) == -2) {
+                                         if (getColorFromLocation((getLocIndex(oldcx) + 1), (getLocIndex(oldcy) + 1)) == CheckerColor.BLACK) {
+                                             valid = true;
+                                         }
+                                     }else if (getLocIndex(oldcy) - getLocIndex(Board.this.posCheck.cy) == 2 &&
+                                             getLocIndex(oldcx) - getLocIndex(Board.this.posCheck.cx) == 2) {
+                                         if (getColorFromLocation((getLocIndex(oldcx) - 1), (getLocIndex(oldcy) - 1)) == CheckerColor.BLACK) {
+                                             valid = true;
+                                         }
+                                     }else if (getLocIndex(oldcy) - getLocIndex(Board.this.posCheck.cy) == 2 &&
+                                             getLocIndex(oldcx) - getLocIndex(Board.this.posCheck.cx) == -2) {
+                                         if (getColorFromLocation((getLocIndex(oldcx) + 1), (getLocIndex(oldcy) - 1)) == CheckerColor.BLACK) {
+                                             valid = true;
+                                         }
+                                     }
+
+                                }else if(Board.this.posCheck.checker.getType() == CheckerType.BLACK_REGULAR){
+
+                                     if(getLocIndex(oldcy) - getLocIndex(Board.this.posCheck.cy) == -1 &&
+                                             (getLocIndex(oldcx) - getLocIndex(Board.this.posCheck.cx) == 1 ||
+                                                     getLocIndex(oldcx) - getLocIndex(Board.this.posCheck.cx) == -1)) {
+
+                                         valid = true;
+
+                                     }else if (getLocIndex(oldcy) - getLocIndex(Board.this.posCheck.cy) == -2 &&
+                                             getLocIndex(oldcx) - getLocIndex(Board.this.posCheck.cx) == 2) {
+                                         if (getColorFromLocation((getLocIndex(oldcx) - 1), (getLocIndex(oldcy) + 1)) == CheckerColor.RED) {
+                                             valid = true;
+                                         }
+                                     }else if (getLocIndex(oldcy) - getLocIndex(Board.this.posCheck.cy) == -2 &&
+                                             getLocIndex(oldcx) - getLocIndex(Board.this.posCheck.cx) == -2) {
+                                         if (getColorFromLocation((getLocIndex(oldcx) + 1), (getLocIndex(oldcy) + 1)) == CheckerColor.RED) {
+                                             valid = true;
+                                         }
+                                     }
+
+                                }else if(Board.this.posCheck.checker.getType() == CheckerType.BLACK_KING){
+                                     if((getLocIndex(oldcy) - getLocIndex(Board.this.posCheck.cy) == -1 ||
+                                             getLocIndex(oldcy) - getLocIndex(Board.this.posCheck.cy) == 1) &&(
+                                             (getLocIndex(oldcx) - getLocIndex(Board.this.posCheck.cx) == 1 ||
+                                                     getLocIndex(oldcx) - getLocIndex(Board.this.posCheck.cx) == -1))) {
+
+                                         valid = true;
+                                     }else if (getLocIndex(oldcy) - getLocIndex(Board.this.posCheck.cy) == -2 &&
+                                             getLocIndex(oldcx) - getLocIndex(Board.this.posCheck.cx) == 2) {
+                                         if (getColorFromLocation((getLocIndex(oldcx) - 1), (getLocIndex(oldcy) + 1)) == CheckerColor.RED) {
+                                             valid = true;
+                                         }
+                                     }else if (getLocIndex(oldcy) - getLocIndex(Board.this.posCheck.cy) == -2 &&
+                                             getLocIndex(oldcx) - getLocIndex(Board.this.posCheck.cx) == -2) {
+                                         if (getColorFromLocation((getLocIndex(oldcx) + 1), (getLocIndex(oldcy) + 1)) == CheckerColor.RED) {
+                                             valid = true;
+                                         }
+                                     }else if (getLocIndex(oldcy) - getLocIndex(Board.this.posCheck.cy) == 2 &&
+                                             getLocIndex(oldcx) - getLocIndex(Board.this.posCheck.cx) == 2) {
+                                         if (getColorFromLocation((getLocIndex(oldcx) - 1), (getLocIndex(oldcy) - 1)) == CheckerColor.RED) {
+                                             valid = true;
+                                         }
+                                     }else if (getLocIndex(oldcy) - getLocIndex(Board.this.posCheck.cy) == 2 &&
+                                             getLocIndex(oldcx) - getLocIndex(Board.this.posCheck.cx) == -2) {
+                                         if (getColorFromLocation((getLocIndex(oldcx) + 1), (getLocIndex(oldcy) - 1)) == CheckerColor.RED) {
+                                             valid = true;
+                                         }
+                                     }
+                                }
+
+
+                                if(Board.this.posCheck.checker.getType() == CheckerType.RED_REGULAR &&
+                                        getLocIndex(Board.this.posCheck.cy) == 1){
+                                 System.out.println("Upgrade");
+                                    Board.this.posCheck.checker.setType(CheckerType.RED_KING);
+                                 }
+                              if(Board.this.posCheck.checker.getType() == CheckerType.BLACK_REGULAR &&
+                                      getLocIndex(Board.this.posCheck.cy) == 8){
+                                  System.out.println("Upgrade");
+                                    Board.this.posCheck.checker.setType(CheckerType.BLACK_KING);
+                              }
+
+                                if (!valid){
+                                    Board.this.posCheck.cx = oldcx;
+                                    Board.this.posCheck.cy = oldcy;
+                                    System.out.println("Invalid move");
+                                }
+
                              posCheck = null;
                              repaint();
                           }
                        });
 
-     
+      // Attach a mouse motion listener to the applet. That listener listens
+      // for mouse drag events.
 
       addMouseMotionListener(new MouseMotionAdapter()
                              {
@@ -165,7 +297,23 @@ public class Board extends JComponent
          posCheck.checker.draw(g, posCheck.cx, posCheck.cy);
    }
 
-   
+   private void paintCheckerBoard(Graphics g)
+   {
+      ((Graphics2D) g).setRenderingHint(RenderingHints.KEY_ANTIALIASING,
+                                        RenderingHints.VALUE_ANTIALIAS_ON);
+
+      // Paint checkerboard.
+
+      for (int row = 0; row < 8; row++)
+      {
+         g.setColor(((row & 1) != 0) ? Color.BLACK : Color.WHITE);
+         for (int col = 0; col < 8; col++)
+         {
+            g.fillRect(col * SQUAREDIM, row * SQUAREDIM, SQUAREDIM, SQUAREDIM);
+            g.setColor((g.getColor() == Color.BLACK) ? Color.WHITE : Color.BLACK);
+         }
+      }
+   }
 
    private int getLocIndex(int loc){
       return (int) (loc/SQUAREDIM + 0.5) + 1;
@@ -175,7 +323,26 @@ public class Board extends JComponent
        return (loc-1)*SQUAREDIM + SQUAREDIM/2;
    }
 
-   
+   private CheckerColor getColorFromLocation(int xL, int yL){
+       System.out.println(xL);
+       System.out.println(yL);
+
+       int x = getCenterCoordinate(xL);
+       int y = getCenterCoordinate(yL);
+
+      for (PosCheck posCheck: posChecks)
+         if (posCheck.cx == x && posCheck.cy == y) {
+            if (posCheck.checker.getType() == CheckerType.RED_KING || posCheck.checker.getType() == CheckerType.RED_REGULAR){
+                System.out.println("RED");
+                return CheckerColor.RED;
+            }else if(posCheck.checker.getType() == CheckerType.BLACK_KING || posCheck.checker.getType() == CheckerType.BLACK_REGULAR){
+                System.out.println("BLACK");
+               return CheckerColor.BLACK;
+            }
+         }
+       System.out.println("ERROR");
+         return CheckerColor.ERROR;
+   }
    // positioned checker helper class
 
    private class PosCheck
