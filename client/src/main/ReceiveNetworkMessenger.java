@@ -10,13 +10,15 @@ import java.util.Scanner;
 
 public class ReceiveNetworkMessenger extends Thread {
 
-    final static String IP_ADDRESS = "localhost";
-    final static int PORT = 1066;
+    private static Socket socket;
+
+    public ReceiveNetworkMessenger(Socket socket) {
+        this.socket = socket;
+    }
 
     public static ArrayList<Integer> receivemessage() {
         // Read back updated list
         try {
-            Socket socket = new Socket(IP_ADDRESS, PORT);
             ObjectInputStream ois = new ObjectInputStream(socket.getInputStream());
             Object listObj;
             while ((listObj = ois.readObject()) != null) {

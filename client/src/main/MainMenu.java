@@ -4,6 +4,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.net.Socket;
+import java.net.UnknownHostException;
+import java.io.IOException;
 
 public class MainMenu extends JPanel {
 
@@ -24,10 +27,22 @@ public class MainMenu extends JPanel {
     private SendNetworkMessenger sendMsgr;
     private ReceiveNetworkMessenger receiveMsgr;
 
+    final String IP_ADDRESS = "localhost";
+    final int PORT = 1066;
+
     public MainMenu() {
         init();
-        sendMsgr = new SendNetworkMessenger();
-        receiveMsgr = new ReceiveNetworkMessenger();
+        Socket socket = null;
+        try {
+            socket = new Socket(IP_ADDRESS, PORT);
+        } catch (UnknownHostException e) {
+            e.printStackTrace();
+            // TODO: throw exception, without socket we can't play
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        sendMsgr = new SendNetworkMessenger(socket);
+        receiveMsgr = new ReceiveNetworkMessenger(socket);
     }
 
     void init() {
