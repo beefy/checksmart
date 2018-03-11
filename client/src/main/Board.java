@@ -111,10 +111,11 @@ public class Board extends JComponent
                                    Board.this.posCheck.cx = oldcx;
                                    Board.this.posCheck.cy = oldcy;
                                 }
-
+                                int xToRemove = -1;
+                                int yToRemove = -1;
                                 boolean valid = false;
                                 //Check for the valid move.
-                             for (PosCheck posCheck: posChecks)
+                                for (PosCheck posCheck: posChecks)
 
                                  if (Board.this.posCheck.checker.getType() == CheckerType.RED_REGULAR){
 
@@ -128,11 +129,15 @@ public class Board extends JComponent
                                                   getLocIndex(oldcx) - getLocIndex(Board.this.posCheck.cx) == 2) {
                                             if (getColorFromLocation((getLocIndex(oldcx) - 1), (getLocIndex(oldcy) - 1)) == CheckerColor.BLACK) {
                                                 valid = true;
+                                                xToRemove = getLocIndex(oldcx) - 1;
+                                                yToRemove = getLocIndex(oldcy) - 1;
                                             }
                                      }else if (getLocIndex(oldcy) - getLocIndex(Board.this.posCheck.cy) == 2 &&
                                                   getLocIndex(oldcx) - getLocIndex(Board.this.posCheck.cx) == -2) {
                                            if (getColorFromLocation((getLocIndex(oldcx) + 1), (getLocIndex(oldcy) - 1)) == CheckerColor.BLACK) {
                                               valid = true;
+                                              xToRemove = getLocIndex(oldcx) + 1;
+                                              yToRemove = getLocIndex(oldcy) - 1;
                                            }
                                      }
 
@@ -146,21 +151,29 @@ public class Board extends JComponent
                                      }else if (getLocIndex(oldcy) - getLocIndex(Board.this.posCheck.cy) == -2 &&
                                              getLocIndex(oldcx) - getLocIndex(Board.this.posCheck.cx) == 2) {
                                          if (getColorFromLocation((getLocIndex(oldcx) - 1), (getLocIndex(oldcy) + 1)) == CheckerColor.BLACK) {
+                                             xToRemove = getLocIndex(oldcx) - 1;
+                                             yToRemove = getLocIndex(oldcy) + 1;
                                              valid = true;
                                          }
                                      }else if (getLocIndex(oldcy) - getLocIndex(Board.this.posCheck.cy) == -2 &&
                                              getLocIndex(oldcx) - getLocIndex(Board.this.posCheck.cx) == -2) {
                                          if (getColorFromLocation((getLocIndex(oldcx) + 1), (getLocIndex(oldcy) + 1)) == CheckerColor.BLACK) {
+                                             xToRemove = getLocIndex(oldcx) + 1;
+                                             yToRemove = getLocIndex(oldcy) + 1;
                                              valid = true;
                                          }
                                      }else if (getLocIndex(oldcy) - getLocIndex(Board.this.posCheck.cy) == 2 &&
                                              getLocIndex(oldcx) - getLocIndex(Board.this.posCheck.cx) == 2) {
                                          if (getColorFromLocation((getLocIndex(oldcx) - 1), (getLocIndex(oldcy) - 1)) == CheckerColor.BLACK) {
+                                             xToRemove = getLocIndex(oldcx) - 1;
+                                             yToRemove = getLocIndex(oldcy) - 1;
                                              valid = true;
                                          }
                                      }else if (getLocIndex(oldcy) - getLocIndex(Board.this.posCheck.cy) == 2 &&
                                              getLocIndex(oldcx) - getLocIndex(Board.this.posCheck.cx) == -2) {
                                          if (getColorFromLocation((getLocIndex(oldcx) + 1), (getLocIndex(oldcy) - 1)) == CheckerColor.BLACK) {
+                                             xToRemove = getLocIndex(oldcx) + 1;
+                                             yToRemove = getLocIndex(oldcy) - 1;
                                              valid = true;
                                          }
                                      }
@@ -176,11 +189,15 @@ public class Board extends JComponent
                                      }else if (getLocIndex(oldcy) - getLocIndex(Board.this.posCheck.cy) == -2 &&
                                              getLocIndex(oldcx) - getLocIndex(Board.this.posCheck.cx) == 2) {
                                          if (getColorFromLocation((getLocIndex(oldcx) - 1), (getLocIndex(oldcy) + 1)) == CheckerColor.RED) {
+                                             xToRemove = getLocIndex(oldcx) - 1;
+                                             yToRemove = getLocIndex(oldcy) + 1;
                                              valid = true;
                                          }
                                      }else if (getLocIndex(oldcy) - getLocIndex(Board.this.posCheck.cy) == -2 &&
                                              getLocIndex(oldcx) - getLocIndex(Board.this.posCheck.cx) == -2) {
                                          if (getColorFromLocation((getLocIndex(oldcx) + 1), (getLocIndex(oldcy) + 1)) == CheckerColor.RED) {
+                                             xToRemove = getLocIndex(oldcx) + 1;
+                                             yToRemove = getLocIndex(oldcy) + 1;
                                              valid = true;
                                          }
                                      }
@@ -195,21 +212,29 @@ public class Board extends JComponent
                                      }else if (getLocIndex(oldcy) - getLocIndex(Board.this.posCheck.cy) == -2 &&
                                              getLocIndex(oldcx) - getLocIndex(Board.this.posCheck.cx) == 2) {
                                          if (getColorFromLocation((getLocIndex(oldcx) - 1), (getLocIndex(oldcy) + 1)) == CheckerColor.RED) {
+                                             xToRemove = getLocIndex(oldcx) - 1;
+                                             yToRemove = getLocIndex(oldcy) + 1;
                                              valid = true;
                                          }
                                      }else if (getLocIndex(oldcy) - getLocIndex(Board.this.posCheck.cy) == -2 &&
                                              getLocIndex(oldcx) - getLocIndex(Board.this.posCheck.cx) == -2) {
                                          if (getColorFromLocation((getLocIndex(oldcx) + 1), (getLocIndex(oldcy) + 1)) == CheckerColor.RED) {
+                                             xToRemove = getLocIndex(oldcx) + 1;
+                                             yToRemove = getLocIndex(oldcy) + 1;
                                              valid = true;
                                          }
                                      }else if (getLocIndex(oldcy) - getLocIndex(Board.this.posCheck.cy) == 2 &&
                                              getLocIndex(oldcx) - getLocIndex(Board.this.posCheck.cx) == 2) {
                                          if (getColorFromLocation((getLocIndex(oldcx) - 1), (getLocIndex(oldcy) - 1)) == CheckerColor.RED) {
+                                             xToRemove = getLocIndex(oldcx) - 1;
+                                             yToRemove = getLocIndex(oldcy) - 1;
                                              valid = true;
                                          }
                                      }else if (getLocIndex(oldcy) - getLocIndex(Board.this.posCheck.cy) == 2 &&
                                              getLocIndex(oldcx) - getLocIndex(Board.this.posCheck.cx) == -2) {
                                          if (getColorFromLocation((getLocIndex(oldcx) + 1), (getLocIndex(oldcy) - 1)) == CheckerColor.RED) {
+                                             xToRemove = getLocIndex(oldcx) + 1;
+                                             yToRemove = getLocIndex(oldcy) - 1;
                                              valid = true;
                                          }
                                      }
@@ -232,6 +257,11 @@ public class Board extends JComponent
                                     Board.this.posCheck.cy = oldcy;
                                     System.out.println("Invalid move");
                                 }
+
+                                if (xToRemove != -1){
+                                 remove(getCenterCoordinate(xToRemove), getCenterCoordinate(yToRemove));
+                                }
+
 
                              posCheck = null;
                              repaint();
@@ -257,6 +287,25 @@ public class Board extends JComponent
                                 }
                              });
 
+   }
+
+
+    public PosCheck getCheckerAt (int x, int y){
+       for (PosCheck posCheck: posChecks)
+           if (posCheck.cx == x && posCheck.cy == y) {
+               return posCheck;
+           }
+        return new PosCheck();
+   }
+
+   public void remove(int xl, int yl){
+       PosCheck pc = getCheckerAt(xl,yl);
+
+       if (pc.checker != null) {
+           posChecks.remove(pc);
+       }else{
+           System.out.println("Unable to delete checker.");
+       }
    }
 
    public void add(Checker checker, int row, int col)
