@@ -47,7 +47,7 @@ public class Board extends JComponent
 
    // list of Checker objects and their initial positions
 
-   private List<PosCheck> posChecks;
+   public ArrayList<PosCheck> posChecks;
 
    public Board()
    {
@@ -256,13 +256,6 @@ public class Board extends JComponent
                                     Board.this.posCheck.cx = oldcx;
                                     Board.this.posCheck.cy = oldcy;
                                     System.out.println("Invalid move");
-                                } else {
-                                    // socket move
-                                    //
-                                    //
-                                    //
-
-
                                 }
 
                                 if (xToRemove != -1){
@@ -424,13 +417,5 @@ public class Board extends JComponent
          }
        System.out.println("ERROR");
          return CheckerColor.ERROR;
-   }
-   // positioned checker helper class
-
-   private class PosCheck
-   {
-      public Checker checker;
-      public int cx;
-      public int cy;
    }
 }

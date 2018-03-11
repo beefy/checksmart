@@ -20,16 +20,16 @@ public class RequestHandler extends Thread {
 
     public void run() {
 
-        ArrayList<Integer> intArrayList = new ArrayList<>();
+        ArrayList<Object> intArrayList = new ArrayList<>();
         Object obj = null;
         try {
             ObjectInputStream is = new ObjectInputStream(clientSocket.getInputStream());
             while ((obj = is.readObject()) != null) {
                 if (obj instanceof ArrayList<?>) {
                     for (Object object : ((ArrayList<?>) obj)) {
-                        if (object instanceof Integer) {
-                            intArrayList.add((Integer) object);
-                        }
+                        //if (object instanceof PosCheck) {
+                            intArrayList.add((Object) object);
+                        //}
                     }
                 }
                 break;

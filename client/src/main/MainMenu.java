@@ -19,8 +19,13 @@ public class MainMenu extends JPanel {
     private Board board;
     private JButton finishTurnButton;
 
+    private SendNetworkMessenger sendMsgr;
+    private ReceiveNetworkMessenger receiveMsgr;
+
     public MainMenu() {
         init();
+        sendMsgr = new SendNetworkMessenger();
+        receiveMsgr = new ReceiveNetworkMessenger();
     }
 
     void init() {
@@ -83,7 +88,8 @@ public class MainMenu extends JPanel {
 
     private ActionListener makeMove() {
         return e -> {
-            // TODO: Update server
+            sendMsgr.sendmessage(board.posChecks);
+            board.posChecks = receiveMsgr.receivemessage();
         };
     }
 }
