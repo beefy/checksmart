@@ -256,6 +256,13 @@ public class Board extends JComponent
                                     Board.this.posCheck.cx = oldcx;
                                     Board.this.posCheck.cy = oldcy;
                                     System.out.println("Invalid move");
+                                } else {
+                                    // socket move
+                                    //
+                                    //
+                                    //
+
+
                                 }
 
                                 if (xToRemove != -1){
