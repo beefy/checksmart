@@ -294,6 +294,32 @@ public class Board extends JComponent
                                 }
                              });
 
+       add(new Checker(CheckerType.RED_REGULAR), 8, 1);
+       add(new Checker(CheckerType.RED_REGULAR), 6, 1);
+       add(new Checker(CheckerType.RED_REGULAR), 8, 3);
+       add(new Checker(CheckerType.RED_REGULAR), 6, 3);
+       add(new Checker(CheckerType.RED_REGULAR), 8, 5);
+       add(new Checker(CheckerType.RED_REGULAR), 6, 5);
+       add(new Checker(CheckerType.RED_REGULAR), 8, 7);
+       add(new Checker(CheckerType.RED_REGULAR), 6, 7);
+       add(new Checker(CheckerType.RED_REGULAR), 7, 2);
+       add(new Checker(CheckerType.RED_REGULAR), 7, 4);
+       add(new Checker(CheckerType.RED_REGULAR), 7, 6);
+       add(new Checker(CheckerType.RED_REGULAR), 7, 8);
+
+
+       add(new Checker(CheckerType.BLACK_REGULAR), 1, 2);
+       add(new Checker(CheckerType.BLACK_REGULAR), 3, 2);
+       add(new Checker(CheckerType.BLACK_REGULAR), 1, 4);
+       add(new Checker(CheckerType.BLACK_REGULAR), 3, 4);
+       add(new Checker(CheckerType.BLACK_REGULAR), 1, 6);
+       add(new Checker(CheckerType.BLACK_REGULAR), 3, 6);
+       add(new Checker(CheckerType.BLACK_REGULAR), 1, 8);
+       add(new Checker(CheckerType.BLACK_REGULAR), 3, 8);
+       add(new Checker(CheckerType.BLACK_REGULAR), 2, 1);
+       add(new Checker(CheckerType.BLACK_REGULAR), 2, 3);
+       add(new Checker(CheckerType.BLACK_REGULAR), 2, 5);
+       add(new Checker(CheckerType.BLACK_REGULAR), 2, 7);
    }
 
 

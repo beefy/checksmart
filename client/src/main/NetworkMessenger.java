@@ -11,17 +11,10 @@ public class NetworkMessenger {
     final static String IP_ADDRESS = "localhost";
     final static int PORT = 1066;
 
-    public static void sendmessage(String[] args) {
+    public static void sendmessage(ArrayList<Integer> initialList) {
         try {
             Socket socket = new Socket(IP_ADDRESS, PORT);
             ObjectOutputStream obs = new ObjectOutputStream(socket.getOutputStream());
-            ArrayList<Integer> initialList = new ArrayList<>();
-            Integer inp;
-            Scanner scanner = new Scanner(System.in);
-            System.out.println("Type integer input: (-1 to stop)");
-            while ((inp = scanner.nextInt()) != -1) {
-                initialList.add(inp);
-            }
 
             // Send list to server to be filtered
             obs.writeObject(initialList);

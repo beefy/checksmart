@@ -28,10 +28,7 @@ public class RequestHandler extends Thread {
                 if (obj instanceof ArrayList<?>) {
                     for (Object object : ((ArrayList<?>) obj)) {
                         if (object instanceof Integer) {
-                            // Add to return list if it is even
-                            if (((Integer) object) % 2 != 0) {
-                                intArrayList.add((Integer) object);
-                            }
+                            intArrayList.add((Integer) object);
                         }
                     }
                 }
