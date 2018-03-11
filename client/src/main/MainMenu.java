@@ -15,7 +15,9 @@ public class MainMenu extends JPanel {
     private JButton startButton;
     private JButton aboutButton;
     private JButton quitButton;
+
     private Board board;
+    private JButton finishTurnButton;
 
     public MainMenu() {
         init();
@@ -48,13 +50,21 @@ public class MainMenu extends JPanel {
         quitButton.setLocation(0,10);
         add(quitButton);
 
+        finishTurnButton = new JButton("Make Move");
+        finishTurnButton.addActionListener(makeMove());
+        finishTurnButton.setBounds(10,10,10,10);
+        finishTurnButton.setLocation(0,10);
+
         setVisible(true);
     }
 
     private ActionListener start() {
         return e -> {
             remove(startButton);
+            remove(aboutButton);
+            remove(quitButton);
             add(board);
+            add(finishTurnButton);
             board.setVisible(true);
             revalidate();
         };
@@ -63,10 +73,17 @@ public class MainMenu extends JPanel {
     private ActionListener about() {
         return e -> {
             // TODO: add about menu
+            System.out.println("Test output: hit about button");
         };
     }
 
     private ActionListener quit() {
         return e -> System.exit(0);
+    }
+
+    private ActionListener makeMove() {
+        return e -> {
+            // TODO: Update server
+        };
     }
 }
