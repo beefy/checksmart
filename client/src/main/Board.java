@@ -49,6 +49,10 @@ public class Board extends JComponent
 
    public ArrayList<PosCheck> posChecks;
 
+   // player of client
+
+   int playernum = -1;
+
    public Board()
    {
       posChecks = new ArrayList<>();
@@ -263,7 +267,6 @@ public class Board extends JComponent
                                 }
 
 
-                             posCheck = null;
                              repaint();
                           }
                        });

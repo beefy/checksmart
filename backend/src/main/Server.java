@@ -19,15 +19,28 @@ public class Server {
         }
 
         while (true) {
-            Socket client;
-            try {
-                client = serverSocket.accept();
-                RequestHandler handler = new RequestHandler(client);
-                handler.start();
-            } catch (IOException e) {
-                e.printStackTrace();
+            Socket client1 = null;
+            Socket client2 = null;
+            while(client1 == null || client2 == null) {
+                if(client1 == null) {
+                    try {
+                        client1 = serverSocket.accept();
+                        System.out.println("new client1 accepted: " + client1.toString());
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                } else if(client2 == null) {
+                    try {
+                        client2 = serverSocket.accept();
+                        System.out.println("new client2 accepted: " + client2.toString());
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
             }
-            break;
+
+            RequestHandler handler = new RequestHandler(client1,client2);
+            handler.start();
         }
     }
 
