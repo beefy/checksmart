@@ -21,7 +21,7 @@ public final class Checker
       // Set checker color.
 
       g.setColor(checkerType == CheckerType.BLACK_REGULAR ||
-                 checkerType == CheckerType.BLACK_KING ? Color.BLACK : 
+                 checkerType == CheckerType.BLACK_KING ? Color.LIGHT_GRAY : 
                  Color.RED);
 
       // Paint checker.
