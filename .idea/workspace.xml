@@ -2,23 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="39b9313d-1c1f-421c-92bd-5d97f867d1d9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/build/classes/main/RequestHandler.class" afterPath="$PROJECT_DIR$/backend/build/classes/main/RequestHandler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/build/classes/main/Board$1.class" afterPath="$PROJECT_DIR$/client/build/classes/main/Board$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/build/classes/main/Board$2.class" afterPath="$PROJECT_DIR$/client/build/classes/main/Board$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/build/classes/main/Board.class" afterPath="$PROJECT_DIR$/client/build/classes/main/Board.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/build/classes/main/Checker.class" afterPath="$PROJECT_DIR$/client/build/classes/main/Checker.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/build/classes/main/CheckerType.class" afterPath="$PROJECT_DIR$/client/build/classes/main/CheckerType.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/build/classes/main/PosCheck.class" afterPath="$PROJECT_DIR$/client/build/classes/main/PosCheck.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/build/classes/main/ReceiveNetworkMessenger.class" afterPath="$PROJECT_DIR$/client/build/classes/main/ReceiveNetworkMessenger.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/src/main/RequestHandler.java" afterPath="$PROJECT_DIR$/backend/src/main/RequestHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/main/Board.java" afterPath="$PROJECT_DIR$/client/src/main/Board.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/main/Checker.java" afterPath="$PROJECT_DIR$/client/src/main/Checker.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/main/CheckerType.java" afterPath="$PROJECT_DIR$/client/src/main/CheckerType.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/main/MainMenu.java" afterPath="$PROJECT_DIR$/client/src/main/MainMenu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/main/PosCheck.java" afterPath="$PROJECT_DIR$/client/src/main/PosCheck.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/main/ReceiveNetworkMessenger.java" afterPath="$PROJECT_DIR$/client/src/main/ReceiveNetworkMessenger.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/main/SendNetworkMessenger.java" afterPath="$PROJECT_DIR$/client/src/main/SendNetworkMessenger.java" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -51,11 +36,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Board.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Board.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/main/Board.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2772">
-              <caret line="71" column="33" lean-forward="true" selection-start-line="71" selection-start-column="33" selection-end-line="71" selection-end-column="33" />
+            <state relative-caret-position="324">
+              <caret line="318" column="32" lean-forward="false" selection-start-line="318" selection-start-column="20" selection-end-line="318" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -93,11 +78,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainMenu.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MainMenu.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/src/main/MainMenu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="833">
-              <caret line="105" column="0" lean-forward="false" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
+            <state relative-caret-position="401">
+              <caret line="92" column="66" lean-forward="false" selection-start-line="92" selection-start-column="66" selection-end-line="92" selection-end-column="66" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -193,8 +178,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-1921" />
-    <option name="y" value="-11" />
+    <option name="x" value="-1" />
+    <option name="y" value="-1091" />
     <option name="width" value="1922" />
     <option name="height" value="1092" />
   </component>
@@ -435,7 +420,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1921" y="-11" width="1922" height="1092" extended-state="6" />
+    <frame x="-1" y="-1091" width="1922" height="1092" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -758,14 +743,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/main/Checker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="8" column="32" lean-forward="false" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/main/SendNetworkMessenger.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
@@ -786,13 +763,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/main/MainMenu.java">
+    <entry file="file://$PROJECT_DIR$/client/src/main/Checker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="833">
-          <caret line="105" column="0" lean-forward="false" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="126">
+          <caret line="8" column="32" lean-forward="false" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -806,8 +781,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/main/Board.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2772">
-          <caret line="71" column="33" lean-forward="true" selection-start-line="71" selection-start-column="33" selection-end-line="71" selection-end-column="33" />
+        <state relative-caret-position="324">
+          <caret line="318" column="32" lean-forward="false" selection-start-line="318" selection-start-column="20" selection-end-line="318" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/main/MainMenu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="401">
+          <caret line="92" column="66" lean-forward="false" selection-start-line="92" selection-start-column="66" selection-end-line="92" selection-end-column="66" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

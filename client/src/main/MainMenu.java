@@ -3,6 +3,7 @@ package main;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 public class MainMenu extends JPanel {
 
@@ -89,7 +90,7 @@ public class MainMenu extends JPanel {
     private ActionListener makeMove() {
         return e -> {
             // build list and send it
-            ArrayList<Integer> movelist;
+            ArrayList<Integer> movelist = new ArrayList<Integer>();
             movelist.add(board.oldcx);
             movelist.add(board.oldcy);
             movelist.add(board.posCheck.cx);
@@ -103,7 +104,12 @@ public class MainMenu extends JPanel {
             int newcx = nextmove.get(2);
             int newcy = nextmove.get(3);
 
-
+            // move the piece to the new location
+            PosCheck moving = board.getCheckerAt(oldcx, oldcy);
+            moving.cx = newcx;
+            moving.cy = newcy;
+            board.remove(oldcy, oldcy);
+            board.repaint();
         };
     }
 }
