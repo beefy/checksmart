@@ -32,7 +32,6 @@ public class RequestHandler extends Thread {
                         //}
                     }
                 }
-                break;
             }
         } catch (IOException e2) {
             e2.printStackTrace();

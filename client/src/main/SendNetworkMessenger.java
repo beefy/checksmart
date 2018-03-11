@@ -13,7 +13,7 @@ public class SendNetworkMessenger {
     final static String IP_ADDRESS = "localhost";
     final static int PORT = 1066;
 
-    public static void sendmessage(ArrayList<PosCheck> initialList) {
+    public static void sendmessage(ArrayList<Integer> initialList) {
         try {
 
             Socket socket = new Socket(IP_ADDRESS, PORT);

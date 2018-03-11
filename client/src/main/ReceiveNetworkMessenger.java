@@ -13,26 +13,26 @@ public class ReceiveNetworkMessenger extends Thread {
     final static String IP_ADDRESS = "localhost";
     final static int PORT = 1066;
 
-    public static ArrayList<PosCheck> receivemessage() {
+    public static ArrayList<Integer> receivemessage() {
         // Read back updated list
         try {
             Socket socket = new Socket(IP_ADDRESS, PORT);
             ObjectInputStream ois = new ObjectInputStream(socket.getInputStream());
             Object listObj;
             while ((listObj = ois.readObject()) != null) {
-                ArrayList<PosCheck> list = new ArrayList<>();
+                ArrayList<Integer> list = new ArrayList<>();
                 if (listObj instanceof ArrayList<?>) {
                     for (Object object : ((ArrayList<?>) listObj)) {
-                        if (object instanceof PosCheck) {
-                            list.add((PosCheck) object);
+                        if (object instanceof Integer) {
+                            list.add((Integer) object);
                         }
                     }
                     // Show user the list
-                    //System.out.println("List: " + list);
-                    ois.close();
+                    System.out.println("List: " + list);
+//                    ois.close();
                     return list;
                 }
-                ois.close();
+//                ois.close();
                 return new ArrayList<>();
             }
         } catch (ClassNotFoundException e) {

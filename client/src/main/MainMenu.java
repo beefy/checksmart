@@ -88,8 +88,22 @@ public class MainMenu extends JPanel {
 
     private ActionListener makeMove() {
         return e -> {
-            sendMsgr.sendmessage(board.posChecks);
-            board.posChecks = receiveMsgr.receivemessage();
+            // build list and send it
+            ArrayList<Integer> movelist;
+            movelist.add(board.oldcx);
+            movelist.add(board.oldcy);
+            movelist.add(board.posCheck.cx);
+            movelist.add(board.posCheck.cy);
+            sendMsgr.sendmessage(movelist);
+
+            // receive next move and change board
+            ArrayList<Integer> nextmove = receiveMsgr.receivemessage();
+            int oldcx = nextmove.get(0);
+            int oldcy = nextmove.get(1);
+            int newcx = nextmove.get(2);
+            int newcy = nextmove.get(3);
+
+
         };
     }
 }

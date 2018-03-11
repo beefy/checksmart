@@ -2,18 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="39b9313d-1c1f-421c-92bd-5d97f867d1d9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/src/main/PosCheck.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/src/main/ReceiveNetworkMessenger.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/src/main/NetworkMessenger.java" afterPath="$PROJECT_DIR$/client/src/main/SendNetworkMessenger.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/build/classes/main/RequestHandler.class" afterPath="$PROJECT_DIR$/backend/build/classes/main/RequestHandler.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/build/classes/main/Board$1.class" afterPath="$PROJECT_DIR$/client/build/classes/main/Board$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/build/classes/main/Board$2.class" afterPath="$PROJECT_DIR$/client/build/classes/main/Board$2.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/build/classes/main/Board.class" afterPath="$PROJECT_DIR$/client/build/classes/main/Board.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/build/classes/main/MainMenu.class" afterPath="$PROJECT_DIR$/client/build/classes/main/MainMenu.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/build/classes/main/Checker.class" afterPath="$PROJECT_DIR$/client/build/classes/main/Checker.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/build/classes/main/CheckerType.class" afterPath="$PROJECT_DIR$/client/build/classes/main/CheckerType.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/build/classes/main/PosCheck.class" afterPath="$PROJECT_DIR$/client/build/classes/main/PosCheck.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/build/classes/main/ReceiveNetworkMessenger.class" afterPath="$PROJECT_DIR$/client/build/classes/main/ReceiveNetworkMessenger.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/src/main/RequestHandler.java" afterPath="$PROJECT_DIR$/backend/src/main/RequestHandler.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/main/Board.java" afterPath="$PROJECT_DIR$/client/src/main/Board.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/main/Checker.java" afterPath="$PROJECT_DIR$/client/src/main/Checker.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/main/CheckerType.java" afterPath="$PROJECT_DIR$/client/src/main/CheckerType.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/main/MainMenu.java" afterPath="$PROJECT_DIR$/client/src/main/MainMenu.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/main/PosCheck.java" afterPath="$PROJECT_DIR$/client/src/main/PosCheck.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/main/ReceiveNetworkMessenger.java" afterPath="$PROJECT_DIR$/client/src/main/ReceiveNetworkMessenger.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/main/SendNetworkMessenger.java" afterPath="$PROJECT_DIR$/client/src/main/SendNetworkMessenger.java" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -27,8 +32,8 @@
       <file leaf-file-name="RequestHandler.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/backend/src/main/RequestHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="558">
-              <caret line="33" column="17" lean-forward="false" selection-start-line="33" selection-start-column="17" selection-end-line="33" selection-end-column="17" />
+            <state relative-caret-position="432">
+              <caret line="26" column="12" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -46,11 +51,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Board.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Board.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/src/main/Board.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="41" column="19" lean-forward="false" selection-start-line="41" selection-start-column="11" selection-end-line="41" selection-end-column="19" />
+            <state relative-caret-position="-2772">
+              <caret line="71" column="33" lean-forward="true" selection-start-line="71" selection-start-column="33" selection-end-line="71" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -58,11 +63,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PosCheck.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PosCheck.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/main/PosCheck.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="4" column="36" lean-forward="false" selection-start-line="4" selection-start-column="36" selection-end-line="4" selection-end-column="36" />
+            <state relative-caret-position="162">
+              <caret line="9" column="1" lean-forward="false" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Checker.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/main/Checker.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="126">
+              <caret line="8" column="32" lean-forward="false" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CheckerType.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/main/CheckerType.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="36">
+              <caret line="2" column="55" lean-forward="false" selection-start-line="2" selection-start-column="55" selection-end-line="2" selection-end-column="55" />
               <folding />
             </state>
           </provider>
@@ -71,9 +96,11 @@
       <file leaf-file-name="MainMenu.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/main/MainMenu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="743">
-              <caret line="91" column="56" lean-forward="false" selection-start-line="91" selection-start-column="56" selection-end-line="91" selection-end-column="56" />
-              <folding />
+            <state relative-caret-position="833">
+              <caret line="105" column="0" lean-forward="false" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -93,8 +120,8 @@
       <file leaf-file-name="SendNetworkMessenger.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/main/SendNetworkMessenger.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="27" selection-end-column="9" />
+            <state relative-caret-position="378">
+              <caret line="21" column="36" lean-forward="false" selection-start-line="21" selection-start-column="36" selection-end-line="21" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -105,8 +132,8 @@
       <file leaf-file-name="ReceiveNetworkMessenger.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/main/ReceiveNetworkMessenger.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="30" column="22" lean-forward="false" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
+            <state relative-caret-position="576">
+              <caret line="32" column="31" lean-forward="false" selection-start-line="32" selection-start-column="27" selection-end-line="32" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -135,9 +162,7 @@
         <option value="$PROJECT_DIR$/backend/src/main/java/checksmart/NetworkMessenger.java" />
         <option value="$PROJECT_DIR$/backend/src/main/java/hello/GreetingController.java" />
         <option value="$PROJECT_DIR$/client/src/main/AlreadyOccupiedException.java" />
-        <option value="$PROJECT_DIR$/client/src/main/Checker.java" />
         <option value="$PROJECT_DIR$/client/src/main/CheckerColor.java" />
-        <option value="$PROJECT_DIR$/client/src/main/CheckerType.java" />
         <option value="$PROJECT_DIR$/client/Makefile" />
         <option value="$PROJECT_DIR$/backend/src/main/java/hello/WebSocketConfig.java" />
         <option value="$PROJECT_DIR$/backend/src/main/resources/static/app.js" />
@@ -156,18 +181,20 @@
         <option value="$PROJECT_DIR$/backend/Makefile" />
         <option value="$PROJECT_DIR$/client/src/main/Checkers.java" />
         <option value="$PROJECT_DIR$/client/src/main/NetworkMessenger.java" />
+        <option value="$PROJECT_DIR$/client/src/main/PosCheck.java" />
+        <option value="$PROJECT_DIR$/client/src/main/Checker.java" />
+        <option value="$PROJECT_DIR$/client/src/main/CheckerType.java" />
         <option value="$PROJECT_DIR$/backend/src/main/RequestHandler.java" />
         <option value="$PROJECT_DIR$/client/src/main/Board.java" />
         <option value="$PROJECT_DIR$/client/src/main/SendNetworkMessenger.java" />
-        <option value="$PROJECT_DIR$/client/src/main/MainMenu.java" />
         <option value="$PROJECT_DIR$/client/src/main/ReceiveNetworkMessenger.java" />
-        <option value="$PROJECT_DIR$/client/src/main/PosCheck.java" />
+        <option value="$PROJECT_DIR$/client/src/main/MainMenu.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-1" />
-    <option name="y" value="-1091" />
+    <option name="x" value="-1921" />
+    <option name="y" value="-11" />
     <option name="width" value="1922" />
     <option name="height" value="1092" />
   </component>
@@ -408,7 +435,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="-1091" width="1922" height="1092" extended-state="6" />
+    <frame x="-1921" y="-11" width="1922" height="1092" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -679,39 +706,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/main/CheckerType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="9" lean-forward="false" selection-start-line="0" selection-start-column="9" selection-end-line="0" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/main/Checker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="9" lean-forward="false" selection-start-line="0" selection-start-column="9" selection-end-line="0" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/main/Checkers.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
           <caret line="4" column="22" lean-forward="false" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/main/Server.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -731,38 +730,46 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/main/Server.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/backend/src/main/RequestHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="33" column="17" lean-forward="false" selection-start-line="33" selection-start-column="17" selection-end-line="33" selection-end-column="17" />
+        <state relative-caret-position="432">
+          <caret line="26" column="12" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/main/Board.java">
+    <entry file="file://$PROJECT_DIR$/client/src/main/CheckerType.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="41" column="19" lean-forward="false" selection-start-line="41" selection-start-column="11" selection-end-line="41" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="36">
+          <caret line="2" column="55" lean-forward="false" selection-start-line="2" selection-start-column="55" selection-end-line="2" selection-end-column="55" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/main/MainMenu.java">
+    <entry file="file://$PROJECT_DIR$/client/src/main/Checker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="743">
-          <caret line="91" column="56" lean-forward="false" selection-start-line="91" selection-start-column="56" selection-end-line="91" selection-end-column="56" />
+        <state relative-caret-position="126">
+          <caret line="8" column="32" lean-forward="false" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/main/SendNetworkMessenger.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="27" selection-end-column="9" />
+        <state relative-caret-position="378">
+          <caret line="21" column="36" lean-forward="false" selection-start-line="21" selection-start-column="36" selection-end-line="21" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -771,8 +778,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/main/ReceiveNetworkMessenger.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="30" column="22" lean-forward="false" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
+        <state relative-caret-position="576">
+          <caret line="32" column="31" lean-forward="false" selection-start-line="32" selection-start-column="27" selection-end-line="32" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/main/MainMenu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="833">
+          <caret line="105" column="0" lean-forward="false" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -781,9 +798,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/main/PosCheck.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="36" lean-forward="false" selection-start-line="4" selection-start-column="36" selection-end-line="4" selection-end-column="36" />
+        <state relative-caret-position="162">
+          <caret line="9" column="1" lean-forward="false" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/main/Board.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2772">
+          <caret line="71" column="33" lean-forward="true" selection-start-line="71" selection-start-column="33" selection-end-line="71" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

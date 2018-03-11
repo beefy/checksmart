@@ -2,7 +2,7 @@
 
 package main;
 
-public class PosCheck extends Object
+public class PosCheck extends Object implements java.io.Serializable
 {
     public Checker checker;
     public int cx;

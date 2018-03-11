@@ -39,11 +39,11 @@ public class Board extends JComponent
 
    // reference to positioned checker at start of drag
 
-   private PosCheck posCheck;
+   public PosCheck posCheck;
 
    // center location of checker at start of drag
 
-   private int oldcx, oldcy;
+   public int oldcx, oldcy;
 
    // list of Checker objects and their initial positions
 
