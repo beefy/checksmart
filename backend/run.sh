@@ -1,2 +1,2 @@
 ./gradlew build
-java -jar build/libs/backend.jar 
+java -jar build/libs/backend.jar

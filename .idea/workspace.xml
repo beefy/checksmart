@@ -2,14 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="39b9313d-1c1f-421c-92bd-5d97f867d1d9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/Makefile" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/backend/src/main/java/checksmart/Move.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/backend/src/main/java/checksmart/MoveController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/backend/src/main/java/checksmart/NetworkMessage.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/src/main/java/hello/Move.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/src/main/java/hello/MoveController.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/src/main/java/hello/NetworkMessage.java" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/backend/src/main/java/hello/Application.java" afterPath="$PROJECT_DIR$/backend/src/main/java/checksmart/Application.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/backend/src/main/java/hello/WebSocketConfig.java" afterPath="$PROJECT_DIR$/backend/src/main/java/checksmart/WebSocketConfig.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/.gradle/4.6/fileContent/annotation-processors.bin" afterPath="$PROJECT_DIR$/backend/.gradle/4.6/fileContent/annotation-processors.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/.gradle/4.6/fileContent/fileContent.lock" afterPath="$PROJECT_DIR$/backend/.gradle/4.6/fileContent/fileContent.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/.gradle/4.6/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/backend/.gradle/4.6/fileHashes/fileHashes.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/.gradle/4.6/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/backend/.gradle/4.6/fileHashes/fileHashes.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/.gradle/4.6/fileHashes/resourceHashesCache.bin" afterPath="$PROJECT_DIR$/backend/.gradle/4.6/fileHashes/resourceHashesCache.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/.gradle/4.6/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/backend/.gradle/4.6/taskHistory/taskHistory.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/.gradle/4.6/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/backend/.gradle/4.6/taskHistory/taskHistory.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterPath="$PROJECT_DIR$/backend/.gradle/buildOutputCleanup/buildOutputCleanup.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/main/AlreadyOccupiedException.java" afterPath="$PROJECT_DIR$/client/src/main/AlreadyOccupiedException.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/main/Board.java" afterPath="$PROJECT_DIR$/client/src/main/Board.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/main/Checker.java" afterPath="$PROJECT_DIR$/client/src/main/Checker.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/main/CheckerColor.java" afterPath="$PROJECT_DIR$/client/src/main/CheckerColor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/main/CheckerType.java" afterPath="$PROJECT_DIR$/client/src/main/CheckerType.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/main/Checkers.java" afterPath="$PROJECT_DIR$/client/src/main/Checkers.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/build.gradle" afterPath="$PROJECT_DIR$/backend/build.gradle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/build/tmp/bootJar/MANIFEST.MF" afterPath="$PROJECT_DIR$/backend/build/tmp/bootJar/MANIFEST.MF" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/pom.xml" afterPath="$PROJECT_DIR$/backend/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/run.sh" afterPath="$PROJECT_DIR$/backend/run.sh" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/src/main/resources/static/app.js" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/app.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -20,94 +34,47 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Application.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/src/main/java/hello/Application.java">
+      <file leaf-file-name="NetworkMessage.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/backend/src/main/java/checksmart/NetworkMessage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+            <state relative-caret-position="0">
+              <caret line="0" column="18" lean-forward="false" selection-start-line="0" selection-start-column="18" selection-end-line="0" selection-end-column="18" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#231#232#0" expanded="true" />
-                <element signature="e#293#294#0" expanded="true" />
+                <element signature="e#161#162#0" expanded="true" />
+                <element signature="e#199#200#0" expanded="true" />
+                <element signature="e#233#234#0" expanded="true" />
+                <element signature="e#263#264#0" expanded="true" />
+                <element signature="e#309#310#0" expanded="true" />
+                <element signature="e#347#348#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AlreadyOccupiedException.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/main/AlreadyOccupiedException.java">
+      <file leaf-file-name="WebSocketConfig.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/backend/src/main/java/checksmart/WebSocketConfig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="9" lean-forward="false" selection-start-line="0" selection-start-column="9" selection-end-line="0" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Board.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/main/Board.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="9" lean-forward="false" selection-start-line="0" selection-start-column="9" selection-end-line="0" selection-end-column="9" />
+            <state relative-caret-position="234">
+              <caret line="13" column="70" lean-forward="false" selection-start-line="13" selection-start-column="70" selection-end-line="13" selection-end-column="70" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1520784534723" expanded="false" signature="17781:17793" ph=" { " />
-                <marker date="1520784534723" expanded="false" signature="17812:17817" ph=" }" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Checker.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/main/Checker.java">
+      <file leaf-file-name="gradlew" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/backend/gradlew">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="9" lean-forward="false" selection-start-line="0" selection-start-column="9" selection-end-line="0" selection-end-column="9" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#221#222#0" expanded="true" />
-                <element signature="e#264#265#0" expanded="true" />
-                <element signature="e#1089#1090#0" expanded="true" />
-                <element signature="e#1118#1119#0" expanded="true" />
-                <element signature="e#1155#1156#0" expanded="true" />
-                <element signature="e#1186#1187#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CheckerColor.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/main/CheckerColor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="9" lean-forward="false" selection-start-line="0" selection-start-column="9" selection-end-line="0" selection-end-column="9" />
+            <state relative-caret-position="-1626">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CheckerType.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/main/CheckerType.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="9" lean-forward="false" selection-start-line="0" selection-start-column="9" selection-end-line="0" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Makefile" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/client/Makefile">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README.md">
+      <file leaf-file-name="gradlew.bat" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/backend/gradlew.bat">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -116,16 +83,73 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Checkers.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/main/Checkers.java">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/backend/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="563">
+              <caret line="52" column="41" lean-forward="false" selection-start-line="52" selection-start-column="21" selection-end-line="52" selection-end-column="41" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/backend/build.gradle">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="594">
+              <caret line="33" column="39" lean-forward="false" selection-start-line="33" selection-start-column="39" selection-end-line="33" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MoveController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/backend/src/main/java/checksmart/MoveController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="9" lean-forward="false" selection-start-line="0" selection-start-column="9" selection-end-line="0" selection-end-column="9" />
+              <caret line="0" column="18" lean-forward="false" selection-start-line="0" selection-start-column="18" selection-end-line="0" selection-end-column="18" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2047#2048#0" expanded="true" />
-                <element signature="e#2122#2123#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Application.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/backend/src/main/java/checksmart/Application.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="18" lean-forward="false" selection-start-line="0" selection-start-column="18" selection-end-line="0" selection-end-column="18" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Move.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/backend/src/main/java/checksmart/Move.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="18" lean-forward="false" selection-start-line="0" selection-start-column="18" selection-end-line="0" selection-end-column="18" />
+              <folding>
+                <element signature="e#279#280#0" expanded="true" />
+                <element signature="e#310#311#0" expanded="true" />
+                <element signature="e#343#344#0" expanded="true" />
+                <element signature="e#372#373#0" expanded="true" />
+                <element signature="e#404#405#0" expanded="true" />
+                <element signature="e#468#469#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/backend/src/main/resources/static/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="702">
+              <caret line="39" column="47" lean-forward="false" selection-start-line="39" selection-start-column="47" selection-end-line="39" selection-end-column="47" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -147,18 +171,9 @@
         <option value="$PROJECT_DIR$/backend/src/main/java/hello/Game.java" />
         <option value="$PROJECT_DIR$/backend/src/main/java/hello/Application.java" />
         <option value="$PROJECT_DIR$/backend/src/main/java/hello/GameController.java" />
-        <option value="$PROJECT_DIR$/backend/src/main/java/checksmart/Move.java" />
-        <option value="$PROJECT_DIR$/backend/src/main/java/checksmart/WebSocketConfig.java" />
         <option value="$PROJECT_DIR$/backend/src/main/java/checksmart/GameController.java" />
         <option value="$PROJECT_DIR$/backend/src/main/java/checksmart/NetworkMessenger.java" />
-        <option value="$PROJECT_DIR$/backend/src/main/java/checksmart/MoveController.java" />
-        <option value="$PROJECT_DIR$/backend/pom.xml" />
-        <option value="$PROJECT_DIR$/backend/src/main/java/hello/NetworkMessage.java" />
         <option value="$PROJECT_DIR$/backend/src/main/java/hello/GreetingController.java" />
-        <option value="$PROJECT_DIR$/backend/src/main/java/hello/Move.java" />
-        <option value="$PROJECT_DIR$/backend/src/main/java/hello/MoveController.java" />
-        <option value="$PROJECT_DIR$/backend/src/main/java/hello/WebSocketConfig.java" />
-        <option value="$PROJECT_DIR$/backend/src/main/resources/static/app.js" />
         <option value="$PROJECT_DIR$/client/src/main/AlreadyOccupiedException.java" />
         <option value="$PROJECT_DIR$/client/src/main/Board.java" />
         <option value="$PROJECT_DIR$/client/src/main/Checker.java" />
@@ -166,11 +181,24 @@
         <option value="$PROJECT_DIR$/client/src/main/Checkers.java" />
         <option value="$PROJECT_DIR$/client/src/main/CheckerType.java" />
         <option value="$PROJECT_DIR$/client/Makefile" />
+        <option value="$PROJECT_DIR$/backend/src/main/java/hello/WebSocketConfig.java" />
+        <option value="$PROJECT_DIR$/backend/src/main/resources/static/app.js" />
+        <option value="$PROJECT_DIR$/backend/src/main/java/hello/Move.java" />
+        <option value="$PROJECT_DIR$/backend/pom.xml" />
+        <option value="$PROJECT_DIR$/backend/run.sh" />
+        <option value="$PROJECT_DIR$/backend/build.gradle" />
+        <option value="$PROJECT_DIR$/backend/src/main/java/hello/NetworkMessage.java" />
+        <option value="$PROJECT_DIR$/backend/src/main/java/hello/MoveController.java" />
+        <option value="$PROJECT_DIR$/backend/src/main/java/checksmart/MoveController.java" />
+        <option value="$PROJECT_DIR$/backend/src/main/java/checksmart/Application.java" />
+        <option value="$PROJECT_DIR$/backend/src/main/java/checksmart/Move.java" />
+        <option value="$PROJECT_DIR$/backend/src/main/java/checksmart/NetworkMessage.java" />
+        <option value="$PROJECT_DIR$/backend/src/main/java/checksmart/WebSocketConfig.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-1" />
+    <option name="x" value="-1921" />
     <option name="y" value="-1091" />
     <option name="width" value="1922" />
     <option name="height" value="1092" />
@@ -203,13 +231,42 @@
             <path>
               <item name="checksmart" type="b2602c69:ProjectViewProjectNode" />
               <item name="checksmart" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="checksmart" type="b2602c69:ProjectViewProjectNode" />
+              <item name="checksmart" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="checksmart" type="b2602c69:ProjectViewProjectNode" />
+              <item name="checksmart" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="checksmart" type="b2602c69:ProjectViewProjectNode" />
+              <item name="checksmart" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="checksmart" type="b2602c69:ProjectViewProjectNode" />
+              <item name="checksmart" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="checksmart" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="checksmart" type="b2602c69:ProjectViewProjectNode" />
               <item name="checksmart" type="462c0819:PsiDirectoryNode" />
               <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="build" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="checksmart" type="b2602c69:ProjectViewProjectNode" />
@@ -239,6 +296,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/backend/build/dependencies" />
+      <recent name="$PROJECT_DIR$/backend/build" />
       <recent name="$PROJECT_DIR$/client/src/main" />
       <recent name="$PROJECT_DIR$/backend" />
       <recent name="$PROJECT_DIR$/backend/gs-rest-service-master" />
@@ -395,7 +454,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="-1091" width="1922" height="1092" extended-state="6" />
+    <frame x="-1921" y="-1091" width="1922" height="1092" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -409,7 +469,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -452,8 +512,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/backend/src/test/java/hello/GreetingControllerTests.java" />
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/checksmart/Move.java" />
     <entry file="file://$PROJECT_DIR$/backend/src/main/java/checksmart/Application.java" />
     <entry file="file://$PROJECT_DIR$/backend/src/main/java/checksmart/Game.java" />
     <entry file="file://$PROJECT_DIR$/backend/mvnw.cmd">
@@ -490,62 +548,64 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/hello/WebSocketConfig.java">
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/checksmart/WebSocketConfig.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="14" column="46" lean-forward="true" selection-start-line="14" selection-start-column="46" selection-end-line="14" selection-end-column="46" />
           <folding>
-            <element signature="imports" expanded="false" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/hello/Application.java">
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/checksmart/Application.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#231#232#0" expanded="true" />
-            <element signature="e#293#294#0" expanded="true" />
+            <element signature="e#236#237#0" expanded="true" />
+            <element signature="e#298#299#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/hello/MoveController.java">
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/checksmart/MoveController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="15" column="1" lean-forward="false" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
           <folding>
-            <element signature="imports" expanded="false" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/hello/Move.java">
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/checksmart/Move.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
           <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding>
-            <element signature="e#125#126#0" expanded="false" />
-            <element signature="e#163#164#0" expanded="false" />
-            <element signature="e#197#198#0" expanded="false" />
-            <element signature="e#227#228#0" expanded="false" />
+            <element signature="e#279#280#0" expanded="true" />
+            <element signature="e#310#311#0" expanded="true" />
+            <element signature="e#343#344#0" expanded="true" />
+            <element signature="e#372#373#0" expanded="true" />
+            <element signature="e#404#405#0" expanded="true" />
+            <element signature="e#468#469#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/hello/NetworkMessage.java">
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/checksmart/NetworkMessage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
           <caret line="9" column="25" lean-forward="false" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
           <folding>
-            <element signature="e#149#150#0" expanded="false" />
-            <element signature="e#181#182#0" expanded="false" />
-            <element signature="e#212#213#0" expanded="false" />
-            <element signature="e#239#240#0" expanded="false" />
-            <element signature="e#279#280#0" expanded="false" />
-            <element signature="e#311#312#0" expanded="false" />
+            <element signature="e#161#162#0" expanded="true" />
+            <element signature="e#199#200#0" expanded="true" />
+            <element signature="e#233#234#0" expanded="true" />
+            <element signature="e#263#264#0" expanded="true" />
+            <element signature="e#309#310#0" expanded="true" />
+            <element signature="e#347#348#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -587,105 +647,6 @@
     <entry file="file://$PROJECT_DIR$/backend/src/main/java/checksmart/GameController.java" />
     <entry file="file://$PROJECT_DIR$/backend/src/main/java/checksmart/NetworkMessenger.java" />
     <entry file="file://$PROJECT_DIR$/backend/src/main/java/checksmart/MoveController.java" />
-    <entry file="file://$PROJECT_DIR$/backend/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="23" column="57" lean-forward="false" selection-start-line="23" selection-start-column="57" selection-end-line="23" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/gradlew">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="45" lean-forward="false" selection-start-line="12" selection-start-column="45" selection-end-line="12" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/main/resources/static/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="32" column="1" lean-forward="false" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/main/resources/static/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/hello/WebSocketConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="46" lean-forward="false" selection-start-line="14" selection-start-column="46" selection-end-line="14" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/hello/NetworkMessage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="25" lean-forward="false" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
-          <folding>
-            <element signature="e#149#150#0" expanded="false" />
-            <element signature="e#181#182#0" expanded="false" />
-            <element signature="e#212#213#0" expanded="false" />
-            <element signature="e#239#240#0" expanded="false" />
-            <element signature="e#279#280#0" expanded="false" />
-            <element signature="e#311#312#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/hello/MoveController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="1" lean-forward="false" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/hello/Move.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding>
-            <element signature="e#125#126#0" expanded="false" />
-            <element signature="e#163#164#0" expanded="false" />
-            <element signature="e#197#198#0" expanded="false" />
-            <element signature="e#227#228#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/hello/Application.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#231#232#0" expanded="true" />
-            <element signature="e#293#294#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/main/AlreadyOccupiedException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -700,8 +661,6 @@
           <caret line="0" column="9" lean-forward="false" selection-start-line="0" selection-start-column="9" selection-end-line="0" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1520784534723" expanded="false" signature="17781:17793" ph=" { " />
-            <marker date="1520784534723" expanded="false" signature="17812:17817" ph=" }" />
           </folding>
         </state>
       </provider>
@@ -755,6 +714,122 @@
         <state relative-caret-position="288">
           <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/main/resources/static/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/run.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" column="4" lean-forward="false" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/gradlew">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1626">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="563">
+          <caret line="52" column="41" lean-forward="false" selection-start-line="52" selection-start-column="21" selection-end-line="52" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/gradlew.bat">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="33" column="39" lean-forward="false" selection-start-line="33" selection-start-column="39" selection-end-line="33" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/main/resources/static/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="702">
+          <caret line="39" column="47" lean-forward="false" selection-start-line="39" selection-start-column="47" selection-end-line="39" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/checksmart/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="18" lean-forward="false" selection-start-line="0" selection-start-column="18" selection-end-line="0" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/checksmart/Move.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="18" lean-forward="false" selection-start-line="0" selection-start-column="18" selection-end-line="0" selection-end-column="18" />
+          <folding>
+            <element signature="e#279#280#0" expanded="true" />
+            <element signature="e#310#311#0" expanded="true" />
+            <element signature="e#343#344#0" expanded="true" />
+            <element signature="e#372#373#0" expanded="true" />
+            <element signature="e#404#405#0" expanded="true" />
+            <element signature="e#468#469#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/checksmart/MoveController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="18" lean-forward="false" selection-start-line="0" selection-start-column="18" selection-end-line="0" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/checksmart/NetworkMessage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="18" lean-forward="false" selection-start-line="0" selection-start-column="18" selection-end-line="0" selection-end-column="18" />
+          <folding>
+            <element signature="e#161#162#0" expanded="true" />
+            <element signature="e#199#200#0" expanded="true" />
+            <element signature="e#233#234#0" expanded="true" />
+            <element signature="e#263#264#0" expanded="true" />
+            <element signature="e#309#310#0" expanded="true" />
+            <element signature="e#347#348#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/checksmart/WebSocketConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="13" column="70" lean-forward="false" selection-start-line="13" selection-start-column="70" selection-end-line="13" selection-end-column="70" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -33,7 +33,7 @@ function disconnect() {
 }
 
 function sendName() {
-    stompClient.send("/app/sendmove", {}, JSON.stringify({'name': $("#name").val()}));
+    stompClient.send("/app/sendmove", {}, JSON.stringify({'moveto': $("#name").val(), 'movefrom': "blah"}));
 }
 
 function showGreeting(message) {
