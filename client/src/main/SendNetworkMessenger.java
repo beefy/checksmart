@@ -22,7 +22,6 @@ public class SendNetworkMessenger {
             // Send list to server to be filtered
             obs.writeObject(msg);
             obs.flush();
-            obs.close();
         } catch (UnknownHostException e) {
             e.printStackTrace();
         } catch (IOException e) {

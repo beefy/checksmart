@@ -34,7 +34,7 @@ public class MainMenu extends JPanel {
         // draw the initial gui
         init();
 
-        //initialize the socket
+        // initialize the socket
         Socket socket = null;
         try {
             socket = new Socket(IP_ADDRESS, PORT);
@@ -44,6 +44,7 @@ public class MainMenu extends JPanel {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        // initialize the messengers with the socket
         sendMsgr = new SendNetworkMessenger(socket);
         receiveMsgr = new ReceiveNetworkMessenger(socket);
 

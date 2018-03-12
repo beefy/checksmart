@@ -1,6 +1,7 @@
 package main;
 
 import java.io.IOException;
+import java.io.EOFException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
@@ -65,15 +66,13 @@ public class RequestHandler extends Thread {
                         }
                     }
                 }
-
-                System.out.println("received data: "+intArrayList.toString());
+                System.out.println("received data: " + intArrayList.toString());
 
                 try {
                     // we write to the client thats reading for us
                     ObjectOutputStream os = new ObjectOutputStream(readingclient.getOutputStream());
                     os.writeObject(intArrayList);
                     os.flush();
-                    os.close();
                 } catch (IOException e1) {
                     e1.printStackTrace();
                 }
