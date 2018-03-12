@@ -402,8 +402,6 @@ public class Board extends JComponent
            if (posCheck.cx == getCenterCoordinate(x1) && posCheck.cy == getCenterCoordinate(y1)) {
                posCheck.cx = getCenterCoordinate(x2);
                posCheck.cy = getCenterCoordinate(y2);
-               System.out.println(posCheck.cx);
-               System.out.println(posCheck.cy);
                revalidate();
                repaint();
            }

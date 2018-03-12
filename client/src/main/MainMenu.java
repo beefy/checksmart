@@ -16,13 +16,13 @@ public class MainMenu extends JPanel {
      *  as user interacts with the program
      */
 
-    private JButton start1Button;
-    private JButton start2Button;
+    private JButton startButton;
     private JButton aboutButton;
     private JButton quitButton;
 
     private Board board;
     private JButton finishTurnButton;
+    private JTextField playernumfield;
 
     private SendNetworkMessenger sendMsgr;
     private ReceiveNetworkMessenger receiveMsgr;
@@ -51,19 +51,15 @@ public class MainMenu extends JPanel {
 
         setBackground(Color.lightGray);
 
-        start1Button = new JButton("Start Game (as player one)");
-        start1Button.setToolTipText("Begin a game of checkers");
-        start1Button.addActionListener(start1());
-        start1Button.setBounds(10,10,10,10);
-        start1Button.setLocation(0,10);
-        add(start1Button);
+        playernumfield = new JTextField("");
+        add(playernumfield);
 
-        start2Button = new JButton("Start Game (as player two)");
-        start2Button.setToolTipText("Begin a game of checkers");
-        start2Button.addActionListener(start2());
-        start2Button.setBounds(10,10,10,10);
-        start2Button.setLocation(0,10);
-        add(start2Button);
+        startButton = new JButton("Start Game");
+        startButton.setToolTipText("Begin a game of checkers");
+        startButton.addActionListener(start());
+        startButton.setBounds(10,10,10,10);
+        startButton.setLocation(0,10);
+        add(startButton);
 
         aboutButton = new JButton("About Game");
         aboutButton.setToolTipText("Learn more about ");
@@ -87,29 +83,10 @@ public class MainMenu extends JPanel {
         setVisible(true);
     }
 
-    private ActionListener start1() {
+    private ActionListener start() {
         return e -> {
 
-            board.playernum = 1;
-
-            remove(start1Button);
-            remove(start2Button);
-            remove(aboutButton);
-            remove(quitButton);
-            add(board);
-            add(finishTurnButton);
-            board.setVisible(true);
-            revalidate();
-        };
-    }
-
-    private ActionListener start2() {
-        return e -> {
-
-            board.playernum = 2;
-
-            remove(start1Button);
-            remove(start2Button);
+            remove(startButton);
             remove(aboutButton);
             remove(quitButton);
             add(board);
@@ -117,23 +94,27 @@ public class MainMenu extends JPanel {
             board.setVisible(true);
             revalidate();
 
-            sendMsgr.sendmessage(null);
+            // get player number from server
+            board.playernum = receiveMsgr.receivemessage().get(0);
+            playernumfield.setText("Player "+board.playernum);
 
-            // receive next move and change board
-            ArrayList<Integer> nextmove = receiveMsgr.receivemessage();
-            int oldcx = nextmove.get(0);
-            int oldcy = nextmove.get(1);
-            int newcx = nextmove.get(2);
-            int newcy = nextmove.get(3);
+            if(board.playernum == 2) {
+                // receive first move and change board
+                ArrayList<Integer> nextmove = receiveMsgr.receivemessage();
+                int oldcx = nextmove.get(0);
+                int oldcy = nextmove.get(1);
+                int newcx = nextmove.get(2);
+                int newcy = nextmove.get(3);
 
-            System.out.println("in START2-MAINMENU.JAVA old:"+oldcx+","+oldcy);
+                System.out.println("in START-MAINMENU.JAVA [received first move]:" + oldcx + "," + oldcy);
 
-            // move the piece to the new location
-            PosCheck moving = board.getCheckerAt(oldcx, oldcy);
-            moving.cx = newcx;
-            moving.cy = newcy;
-            board.remove(oldcy, oldcy);
-            board.repaint();
+                // move the piece to the new location
+                PosCheck moving = board.getCheckerAt(oldcx, oldcy);
+                moving.cx = newcx;
+                moving.cy = newcy;
+                board.remove(oldcy, oldcy);
+                board.repaint();
+            }
         };
     }
 
