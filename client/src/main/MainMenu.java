@@ -163,6 +163,8 @@ public class MainMenu extends JPanel {
             moving.cy = newcy;
             board.remove(oldcy, oldcy);
             board.repaint();
+
+            board.makeAMove(board.getLocIndex(oldcx), board.getLocIndex(oldcy), board.getLocIndex(newcx), board.getLocIndex(newcy));
         };
     }
 }
