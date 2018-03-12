@@ -317,8 +317,6 @@ public class Board extends JComponent
        add(new Checker(CheckerType.BLACK_REGULAR), 2, 5);
        add(new Checker(CheckerType.BLACK_REGULAR), 2, 7);
 
-       System.out.println("Moving piece");
-       makeAMove(6, 1, 4,1);
    }
 
 
@@ -402,7 +400,6 @@ public class Board extends JComponent
            if (posCheck.cx == getCenterCoordinate(x1) && posCheck.cy == getCenterCoordinate(y1)) {
                posCheck.cx = getCenterCoordinate(x2);
                posCheck.cy = getCenterCoordinate(y2);
-               revalidate();
                repaint();
            }
    }
