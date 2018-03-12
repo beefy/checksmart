@@ -308,10 +308,7 @@ public class Board extends JComponent
        PosCheck pc = getCheckerAt(xl,yl);
 
        if (pc.checker != null) {
-           System.out.println("poscheck remove debug"+getLocIndex(pc.cx)+","+getLocIndex(pc.cy));
-           System.out.println("poscheck length (before delete):"+posChecks.size());
            posChecks.remove(pc);
-           System.out.println("poscheck length (after delete):"+posChecks.size());
        }else{
            System.out.println("Unable to delete checker.");
        }
@@ -380,7 +377,6 @@ public class Board extends JComponent
            if (posCheck.cx == getCenterCoordinate(9-x1) && posCheck.cy == getCenterCoordinate(9-y1)) {
                posCheck.cx = getCenterCoordinate(9-x2);
                posCheck.cy = getCenterCoordinate(9-y2);
-               revalidate();
                repaint();
            }
    }

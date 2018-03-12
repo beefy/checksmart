@@ -185,7 +185,7 @@ public class MainMenu extends JPanel {
 
                     System.out.println("in MAKEMOVE-MAINMENU.JAVA [receiving]:"+oldcx+","+oldcy);
 
-                    board.makeAMove(board.getLocIndex(oldcx), board.getLocIndex(oldcy), board.getLocIndex(newcx), board.getLocIndex(newcy));
+
 
                     // remove pieces that were sent in addition to regular data
                     int counter = 0;
@@ -197,12 +197,14 @@ public class MainMenu extends JPanel {
                             System.out.println("removing after opponent took on "+nextmove.get(counter)+","+nextmove.get(counter+1));
                             int xtmp = board.getCenterCoordinate(9-nextmove.get(counter));
                             int ytmp = board.getCenterCoordinate(9-nextmove.get(counter+1));
+                            board.getCheckerAt(xtmp,ytmp).checker.setType(CheckerType.DELETED);
                             board.remove(xtmp,ytmp);
-//                            board.getCheckerAt(xtmp,ytmp).checker.setType(CheckerType.DELETED);
-                            repaint();
+                            revalidate();
+
                         }
                         counter += 1;
                     }
+                    board.makeAMove(board.getLocIndex(oldcx), board.getLocIndex(oldcy), board.getLocIndex(newcx), board.getLocIndex(newcy));
 
                     // reset last piece move to reset possible chain
                     board.lastmovex = -1;
