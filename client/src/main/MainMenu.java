@@ -20,6 +20,10 @@ public class MainMenu extends JPanel {
     private JButton aboutButton;
     private JButton quitButton;
 
+    // About button used only for the about menu
+    private JButton aboutBackButton;
+    private JTextArea aboutText;
+
     private Board board;
     private JButton finishTurnButton;
     private JButton resignButton;
@@ -102,6 +106,13 @@ public class MainMenu extends JPanel {
         resignButton.setBounds(10,10,10,10);
         resignButton.setLocation(0,10);
 
+        aboutBackButton = new JButton("Back");
+        aboutBackButton.addActionListener(returnToMenu());
+        aboutBackButton.setBounds(10,10,10,10);
+        aboutBackButton.setLocation(0, 10);
+
+        aboutText = new JTextArea("ASDASDASDASDASD");
+
         setVisible(true);
 
         System.out.println("Menu GUI is drawn");
@@ -144,8 +155,21 @@ public class MainMenu extends JPanel {
 
     private ActionListener about() {
         return e -> {
-            // TODO: add about menu
-            System.out.println("Test output: hit about button");
+            // Add text and back button
+            add(aboutBackButton);
+            add(aboutText);
+
+            // Remove everything else
+            remove(board);
+            remove(resignButton);
+            remove(finishTurnButton);
+            remove(quitButton);
+            remove(startButton);
+            remove(aboutButton);
+            remove(playernumfield);
+
+            revalidate();
+            repaint();
         };
     }
 
@@ -221,6 +245,27 @@ public class MainMenu extends JPanel {
             add(startButton);
             add(aboutButton);
             add(quitButton);
+            revalidate();
+            repaint();
+        };
+    }
+
+    private ActionListener returnToMenu() {
+        return e -> {
+            // Hide game information
+            remove(board);
+            remove(finishTurnButton);
+            remove(resignButton);
+            remove(aboutBackButton);
+            remove(aboutText);
+            board.setVisible(false);
+
+            // Show main menu information
+            add(startButton);
+            add(aboutButton);
+            add(quitButton);
+            add(playernumfield);
+
             revalidate();
             repaint();
         };
