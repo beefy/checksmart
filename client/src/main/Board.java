@@ -53,7 +53,6 @@ public class Board extends JComponent
 
    public boolean didTakeOver;
 
-   public PosCheck chainPiece;
 
 
 
@@ -226,12 +225,6 @@ public class Board extends JComponent
                                     Board.this.posCheck.checker.setType(CheckerType.BLACK_KING);
                               }
 
-                              if(!isFirstMoveOfChain){
-                                  if (Board.this.posCheck.cx != chainPiece.cx || Board.this.posCheck.cy != chainPiece.cy){
-                                      System.out.println("This is not a chain piece");
-                                      //valid = false;
-                                  }
-                              }
 
                                 if (!valid){
                                     Board.this.posCheck.cx = oldcx;
@@ -249,8 +242,6 @@ public class Board extends JComponent
                                  removedPieces.add(yToRemove);
                                 }
 
-                                isFirstMoveOfChain = false;
-                                chainPiece = Board.this.posCheck;
                              repaint();
                           }
                        });
@@ -307,6 +298,7 @@ public class Board extends JComponent
     public PosCheck getCheckerAt (int x, int y){
        for (PosCheck posCheck: posChecks)
            if (posCheck.cx == x && posCheck.cy == y) {
+                System.out.println("Returning the poscheck in getter");
                return posCheck;
            }
         return new PosCheck();

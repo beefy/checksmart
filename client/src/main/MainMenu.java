@@ -195,7 +195,10 @@ public class MainMenu extends JPanel {
                         } else if(counter%2==0) {
                             // extra pieces to remove
                             System.out.println("removing after opponent took on "+nextmove.get(counter)+","+nextmove.get(counter+1));
-                            board.remove(board.getCenterCoordinate(9-nextmove.get(counter)),board.getCenterCoordinate(9-nextmove.get(counter+1)));
+                            int xtmp = board.getCenterCoordinate(9-nextmove.get(counter));
+                            int ytmp = board.getCenterCoordinate(9-nextmove.get(counter+1));
+                            board.remove(xtmp,ytmp);
+//                            board.getCheckerAt(xtmp,ytmp).checker.setType(CheckerType.DELETED);
                             repaint();
                         }
                         counter += 1;

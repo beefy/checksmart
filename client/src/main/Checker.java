@@ -25,10 +25,14 @@ public final class Checker implements java.io.Serializable
                  Color.RED);
 
       // Paint checker.
-
-      g.fillOval(x, y, DIMENSION, DIMENSION);
-      g.setColor(Color.WHITE);
-      g.drawOval(x, y, DIMENSION, DIMENSION);
+      if(checkerType == CheckerType.DELETED) {
+         g.setColor(Color.BLACK);
+         g.fillOval(x, y, DIMENSION, DIMENSION);
+      } else {
+         g.fillOval(x, y, DIMENSION, DIMENSION);
+         g.setColor(Color.WHITE);
+         g.drawOval(x, y, DIMENSION, DIMENSION);
+      }
 
       if (checkerType == CheckerType.RED_KING || 
           checkerType == CheckerType.BLACK_KING)
