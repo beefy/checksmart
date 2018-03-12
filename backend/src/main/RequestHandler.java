@@ -15,7 +15,6 @@ public class RequestHandler extends Thread {
     private Socket clientSocket1 = null;
     private Socket clientSocket2 = null;
 
-
     Socket readingclient = null;
     Socket writingclient = null;
 
@@ -29,6 +28,27 @@ public class RequestHandler extends Thread {
 
     public void run() {
 
+        System.out.println("reading from " + writingclient.toString() + " and writing to " + readingclient.toString());
+
+        // send player numbers to client
+        try {
+            ArrayList<Integer> player1list = new ArrayList<Integer>();
+            ArrayList<Integer> player2list = new ArrayList<Integer>();
+            player1list.add(1);
+            player2list.add(2);
+            // tell player 1
+            ObjectOutputStream os = new ObjectOutputStream(clientSocket1.getOutputStream());
+            os.writeObject(player1list);
+            os.close();
+            // tell player 2
+            os = new ObjectOutputStream(clientSocket2.getOutputStream());
+            os.writeObject(player2list);
+            os.close();
+        } catch (IOException e1) {
+            e1.printStackTrace();
+        }
+
+
         ArrayList<Integer> intArrayList = new ArrayList<>();
         Object obj = null;
         try {
@@ -36,12 +56,30 @@ public class RequestHandler extends Thread {
             ObjectInputStream is = new ObjectInputStream(writingclient.getInputStream());
             while ((obj = is.readObject()) != null) {
                 if (obj instanceof ArrayList<?>) {
+                    // for game play
                     for (Object object : ((ArrayList<?>) obj)) {
                         if (object instanceof Integer) {
                             intArrayList.add((Integer) object);
                         }
                     }
                 }
+
+//                else if(obj instanceof Integer) {
+//                    // for matching
+//
+//                    // writingclient should be player1, readingclient should be player2
+//                    // so our first read should be 1 otherwise we switch reading and writing clients
+//                    Integer playernum = (Integer) obj;
+//                    if(playernum.compareTo(1) != 0) {
+//                        // swap the reading and writing clients to switch the game turn
+//                        Socket tmpsocket = writingclient;
+//                        writingclient = readingclient;
+//                        readingclient = tmpsocket;
+//                    }
+//                    break;
+//                }
+
+                System.out.println("received data: "+intArrayList.toString());
 
                 try {
                     // we write to the client thats reading for us

@@ -16,11 +16,11 @@ public class SendNetworkMessenger {
         this.socket = socket;
     }
 
-    public static void sendmessage(ArrayList<Integer> initialList) {
+    public static void sendmessage(Object msg) {
         try {
             ObjectOutputStream obs = new ObjectOutputStream(socket.getOutputStream());
             // Send list to server to be filtered
-            obs.writeObject(initialList);
+            obs.writeObject(msg);
 
         } catch (UnknownHostException e) {
             e.printStackTrace();
