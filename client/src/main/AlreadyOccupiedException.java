@@ -1,4 +1,4 @@
-package Main;
+package main;
 
 public class AlreadyOccupiedException extends RuntimeException
 {
