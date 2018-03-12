@@ -45,10 +45,16 @@ public class Board extends JComponent
    //check if this is the first checker move
    public boolean isFirstMoveOfChain;
 
+
    // store the location of the last move for "chain moves"
    public int lastmovex = -1;
    public int lastmovey = -1;
    public PosCheck lastposcheck;
+
+   public boolean didTakeOver;
+
+
+
 
    // player of client
    int playernum = -1;
@@ -123,6 +129,8 @@ public class Board extends JComponent
                                 for (PosCheck posCheck: posChecks)
 
                                  if (Board.this.posCheck.checker.getType() == CheckerType.RED_REGULAR){
+
+
 
                                      if(getLocIndex(oldcy) - getLocIndex(Board.this.posCheck.cy) == 1 &&
                                                (getLocIndex(oldcx) - getLocIndex(Board.this.posCheck.cx) == 1 ||
@@ -217,6 +225,7 @@ public class Board extends JComponent
                                     Board.this.posCheck.checker.setType(CheckerType.BLACK_KING);
                               }
 
+
                                 if (!valid){
                                     Board.this.posCheck.cx = oldcx;
                                     Board.this.posCheck.cy = oldcy;
@@ -232,7 +241,6 @@ public class Board extends JComponent
                                  removedPieces.add(xToRemove);
                                  removedPieces.add(yToRemove);
                                 }
-
 
                              repaint();
                           }
@@ -290,6 +298,7 @@ public class Board extends JComponent
     public PosCheck getCheckerAt (int x, int y){
        for (PosCheck posCheck: posChecks)
            if (posCheck.cx == x && posCheck.cy == y) {
+                System.out.println("Returning the poscheck in getter");
                return posCheck;
            }
         return new PosCheck();
@@ -299,10 +308,7 @@ public class Board extends JComponent
        PosCheck pc = getCheckerAt(xl,yl);
 
        if (pc.checker != null) {
-           System.out.println("poscheck remove debug"+getLocIndex(pc.cx)+","+getLocIndex(pc.cy));
-           System.out.println("poscheck length (before delete):"+posChecks.size());
            posChecks.remove(pc);
-           System.out.println("poscheck length (after delete):"+posChecks.size());
        }else{
            System.out.println("Unable to delete checker.");
        }
@@ -371,7 +377,6 @@ public class Board extends JComponent
            if (posCheck.cx == getCenterCoordinate(9-x1) && posCheck.cy == getCenterCoordinate(9-y1)) {
                posCheck.cx = getCenterCoordinate(9-x2);
                posCheck.cy = getCenterCoordinate(9-y2);
-               revalidate();
                repaint();
            }
    }
