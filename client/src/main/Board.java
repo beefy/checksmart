@@ -18,7 +18,7 @@ public class Board extends JComponent
 {
    // dimension of checkerboard square (25% bigger than checker)
 
-   private final static int SQUAREDIM = (int) (Checker.getDimension() * 1.25);
+   public final static int SQUAREDIM = (int) (Checker.getDimension() * 1.25);
 
    // dimension of checkerboard (width of 8 squares)
 
@@ -39,15 +39,19 @@ public class Board extends JComponent
 
    // reference to positioned checker at start of drag
 
-   private PosCheck posCheck;
+   public PosCheck posCheck;
 
    // center location of checker at start of drag
 
-   private int oldcx, oldcy;
+   public int oldcx, oldcy;
 
    // list of Checker objects and their initial positions
 
-   private List<PosCheck> posChecks;
+   public ArrayList<PosCheck> posChecks;
+
+   // player of client
+
+   int playernum = -1;
 
    public Board()
    {
@@ -263,7 +267,6 @@ public class Board extends JComponent
                                 }
 
 
-                             posCheck = null;
                              repaint();
                           }
                        });
@@ -313,6 +316,7 @@ public class Board extends JComponent
        add(new Checker(CheckerType.BLACK_REGULAR), 2, 3);
        add(new Checker(CheckerType.BLACK_REGULAR), 2, 5);
        add(new Checker(CheckerType.BLACK_REGULAR), 2, 7);
+
    }
 
 
@@ -390,7 +394,24 @@ public class Board extends JComponent
       }
    }
 
-   private int getLocIndex(int loc){
+
+   public void makeAMove(int y1, int x1, int y2, int x2){
+//       for (PosCheck posCheck: posChecks)
+//           if (posCheck.cx == getCenterCoordinate(x1) && posCheck.cy == getCenterCoordinate(y1)) {
+//               posCheck.cx = getCenterCoordinate(x2);
+//               posCheck.cy = getCenterCoordinate(y2);
+//               revalidate();
+//           }
+       // move the piece to the new location
+       PosCheck moving = getCheckerAt(x1,y1);
+       moving.cx = x2;
+       moving.cy = y2;
+       remove(x1, y1);
+       repaint();
+   }
+
+
+   public int getLocIndex(int loc){
       return (int) (loc/SQUAREDIM + 0.5) + 1;
    }
 
@@ -417,13 +438,5 @@ public class Board extends JComponent
          }
        System.out.println("ERROR");
          return CheckerColor.ERROR;
-   }
-   // positioned checker helper class
-
-   private class PosCheck
-   {
-      public Checker checker;
-      public int cx;
-      public int cy;
    }
 }
