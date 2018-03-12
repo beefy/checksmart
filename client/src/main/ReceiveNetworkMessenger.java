@@ -16,35 +16,47 @@ public class ReceiveNetworkMessenger extends Thread {
         this.socket = socket;
     }
 
-    public static ArrayList<Integer> receivemessage() {
-        // Read back updated list
-        try {
-            ObjectInputStream ois = new ObjectInputStream(socket.getInputStream());
-            Object listObj;
-            while ((listObj = ois.readObject()) != null) {
-                ArrayList<Integer> list = new ArrayList<>();
-                if (listObj instanceof ArrayList<?>) {
-                    for (Object object : ((ArrayList<?>) listObj)) {
-                        if (object instanceof Integer) {
-                            list.add((Integer) object);
-                        }
-                    }
-                    // Show user the list
-                    System.out.println("List: " + list);
-//                    ois.close();
-                    return list;
-                }
-//                ois.close();
-                return new ArrayList<>();
-            }
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (UnknownHostException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return new ArrayList<>();
+    interface Callback {
+        void onSuccess(ArrayList<Integer> nextmove);
     }
 
+    public static void receivemessage(final Callback callback) {
+        Thread t = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                // Read back updated list
+                try {
+                    ObjectInputStream ois = new ObjectInputStream(socket.getInputStream());
+                    Object listObj;
+                    while ((listObj = ois.readObject()) != null) {
+                        ArrayList<Integer> list = new ArrayList<>();
+                        if (listObj instanceof ArrayList<?>) {
+                            for (Object object : ((ArrayList<?>) listObj)) {
+                                if (object instanceof Integer) {
+                                    list.add((Integer) object);
+                                }
+                            }
+                            // Show user the list
+                            System.out.println("List: " + list);
+//                    ois.close();
+                            callback.onSuccess(list);
+                            return;
+                        }
+//                ois.close();
+                        callback.onSuccess(new ArrayList<>());
+                        return;
+                    }
+                } catch (ClassNotFoundException e) {
+                    e.printStackTrace();
+                } catch (UnknownHostException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                callback.onSuccess(new ArrayList<>());
+                return;
+            }
+        });
+        t.start();
+    }
 }

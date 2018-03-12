@@ -51,8 +51,13 @@ public class MainMenu extends JPanel {
 
         // get player number from server
         System.out.println("waiting for player number...");
-        board.playernum = receiveMsgr.receivemessage().get(0);
-        playernumfield.setText("Player "+board.playernum);
+        receiveMsgr.receivemessage(new ReceiveNetworkMessenger.Callback() {
+            @Override
+            public void onSuccess(ArrayList<Integer> nextmove) {
+                board.playernum = nextmove.get(0);
+                playernumfield.setText("Player "+board.playernum);
+            }
+        });
     }
 
     void init() {
@@ -118,16 +123,21 @@ public class MainMenu extends JPanel {
 
             if(board.playernum == 2) {
                 // receive first move and change board
-                ArrayList<Integer> nextmove = receiveMsgr.receivemessage();
-                int oldcx = nextmove.get(0);
-                int oldcy = nextmove.get(1);
-                int newcx = nextmove.get(2);
-                int newcy = nextmove.get(3);
+                receiveMsgr.receivemessage(new ReceiveNetworkMessenger.Callback() {
+                    @Override
+                    public void onSuccess(ArrayList<Integer> nextmove) {
 
-                System.out.println("in START-MAINMENU.JAVA [received first move]:" + oldcx + "," + oldcy);
+                        int oldcx = nextmove.get(0);
+                        int oldcy = nextmove.get(1);
+                        int newcx = nextmove.get(2);
+                        int newcy = nextmove.get(3);
 
-                // move the piece to the new location
-                board.makeAMove(board.getLocIndex(oldcx), board.getLocIndex(oldcy), board.getLocIndex(newcx), board.getLocIndex(newcy));
+                        System.out.println("in START-MAINMENU.JAVA [received first move]:" + oldcx + "," + oldcy);
+
+                        // move the piece to the new location
+                        board.makeAMove(board.getLocIndex(oldcx), board.getLocIndex(oldcy), board.getLocIndex(newcx), board.getLocIndex(newcy));
+                    }
+                });
             }
         };
     }
@@ -164,34 +174,39 @@ public class MainMenu extends JPanel {
             System.out.println("in MAKEMOVE-MAINMENU.JAVA [sending]:"+board.oldcx+","+board.oldcy);
 
             // receive next move and change board
-            ArrayList<Integer> nextmove = receiveMsgr.receivemessage();
-            int oldcx = nextmove.get(0);
-            int oldcy = nextmove.get(1);
-            int newcx = nextmove.get(2);
-            int newcy = nextmove.get(3);
+            receiveMsgr.receivemessage(new ReceiveNetworkMessenger.Callback() {
+                @Override
+                public void onSuccess(ArrayList<Integer> nextmove) {
 
-            System.out.println("in MAKEMOVE-MAINMENU.JAVA [receiving]:"+oldcx+","+oldcy);
+                    int oldcx = nextmove.get(0);
+                    int oldcy = nextmove.get(1);
+                    int newcx = nextmove.get(2);
+                    int newcy = nextmove.get(3);
 
-            board.makeAMove(board.getLocIndex(oldcx), board.getLocIndex(oldcy), board.getLocIndex(newcx), board.getLocIndex(newcy));
+                    System.out.println("in MAKEMOVE-MAINMENU.JAVA [receiving]:"+oldcx+","+oldcy);
 
-            // remove pieces that were sent in addition to regular data
-            int counter = 0;
-            for(Integer i: nextmove) {
-                if(counter < 4) {
-                    // do nothing
-                } else if(counter%2==0) {
-                    // extra pieces to remove
-                    System.out.println("removing after opponent took on "+nextmove.get(counter)+","+nextmove.get(counter+1));
-                    board.remove(board.getCenterCoordinate(9-nextmove.get(counter)),board.getCenterCoordinate(9-nextmove.get(counter+1)));
-                    repaint();
+                    board.makeAMove(board.getLocIndex(oldcx), board.getLocIndex(oldcy), board.getLocIndex(newcx), board.getLocIndex(newcy));
+
+                    // remove pieces that were sent in addition to regular data
+                    int counter = 0;
+                    for(Integer i: nextmove) {
+                        if(counter < 4) {
+                            // do nothing
+                        } else if(counter%2==0) {
+                            // extra pieces to remove
+                            System.out.println("removing after opponent took on "+nextmove.get(counter)+","+nextmove.get(counter+1));
+                            board.remove(board.getCenterCoordinate(9-nextmove.get(counter)),board.getCenterCoordinate(9-nextmove.get(counter+1)));
+                            repaint();
+                        }
+                        counter += 1;
+                    }
+
+                    // reset last piece move to reset possible chain
+                    board.lastmovex = -1;
+                    board.lastmovey = -1;
+                    board.lastposcheck = null;
                 }
-                counter += 1;
-            }
-
-            // reset last piece move to reset possible chain
-            board.lastmovex = -1;
-            board.lastmovey = -1;
-            board.lastposcheck = null;
+            });
         };
     }
 
