@@ -11,7 +11,7 @@ public class Checkers extends JFrame
    public Checkers(String title)
    {
       super(title);
-      setSize(new Dimension(400,500));
+      setSize(new Dimension(Board.SQUAREDIM*10,Board.SQUAREDIM*9));
       setBackground(Color.lightGray);
       setDefaultCloseOperation(EXIT_ON_CLOSE);
 
