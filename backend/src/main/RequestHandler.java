@@ -37,13 +37,15 @@ public class RequestHandler extends Thread {
             player1list.add(1);
             player2list.add(2);
             // tell player 1
-            ObjectOutputStream os = new ObjectOutputStream(clientSocket1.getOutputStream());
-            os.writeObject(player1list);
-            os.close();
+            ObjectOutputStream os1 = new ObjectOutputStream(clientSocket1.getOutputStream());
+            os1.writeObject(player1list);
+            System.out.println("Sent player number to client 1");
+            os1.flush();
             // tell player 2
-            os = new ObjectOutputStream(clientSocket2.getOutputStream());
-            os.writeObject(player2list);
-            os.close();
+            ObjectOutputStream os2 = new ObjectOutputStream(clientSocket2.getOutputStream());
+            os2.writeObject(player2list);
+            System.out.println("Sent player number to client 2");
+            os2.flush();
         } catch (IOException e1) {
             e1.printStackTrace();
         }
@@ -64,28 +66,13 @@ public class RequestHandler extends Thread {
                     }
                 }
 
-//                else if(obj instanceof Integer) {
-//                    // for matching
-//
-//                    // writingclient should be player1, readingclient should be player2
-//                    // so our first read should be 1 otherwise we switch reading and writing clients
-//                    Integer playernum = (Integer) obj;
-//                    if(playernum.compareTo(1) != 0) {
-//                        // swap the reading and writing clients to switch the game turn
-//                        Socket tmpsocket = writingclient;
-//                        writingclient = readingclient;
-//                        readingclient = tmpsocket;
-//                    }
-//                    break;
-//                }
-
                 System.out.println("received data: "+intArrayList.toString());
 
                 try {
                     // we write to the client thats reading for us
                     ObjectOutputStream os = new ObjectOutputStream(readingclient.getOutputStream());
                     os.writeObject(intArrayList);
-                    os.close();
+//                    os.close();
                 } catch (IOException e1) {
                     e1.printStackTrace();
                 }

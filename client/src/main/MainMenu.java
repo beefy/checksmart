@@ -31,7 +31,10 @@ public class MainMenu extends JPanel {
     final int PORT = 1066;
 
     public MainMenu() {
+        // draw the initial gui
         init();
+
+        //initialize the socket
         Socket socket = null;
         try {
             socket = new Socket(IP_ADDRESS, PORT);
@@ -43,6 +46,11 @@ public class MainMenu extends JPanel {
         }
         sendMsgr = new SendNetworkMessenger(socket);
         receiveMsgr = new ReceiveNetworkMessenger(socket);
+
+        // get player number from server
+        System.out.println("waiting for player number...");
+        board.playernum = receiveMsgr.receivemessage().get(0);
+        playernumfield.setText("Player "+board.playernum);
     }
 
     void init() {
@@ -81,6 +89,8 @@ public class MainMenu extends JPanel {
         finishTurnButton.setLocation(0,10);
 
         setVisible(true);
+
+        System.out.println("Menu GUI is drawn");
     }
 
     private ActionListener start() {
@@ -93,10 +103,6 @@ public class MainMenu extends JPanel {
             add(finishTurnButton);
             board.setVisible(true);
             revalidate();
-
-            // get player number from server
-            board.playernum = receiveMsgr.receivemessage().get(0);
-            playernumfield.setText("Player "+board.playernum);
 
             if(board.playernum == 2) {
                 // receive first move and change board
