@@ -45,10 +45,17 @@ public class Board extends JComponent
    //check if this is the first checker move
    public boolean isFirstMoveOfChain;
 
+
    // store the location of the last move for "chain moves"
    public int lastmovex = -1;
    public int lastmovey = -1;
    public PosCheck lastposcheck;
+
+   public boolean didTakeOver;
+
+   public PosCheck chainPiece;
+
+
 
    // player of client
    int playernum = -1;
@@ -123,6 +130,8 @@ public class Board extends JComponent
                                 for (PosCheck posCheck: posChecks)
 
                                  if (Board.this.posCheck.checker.getType() == CheckerType.RED_REGULAR){
+
+
 
                                      if(getLocIndex(oldcy) - getLocIndex(Board.this.posCheck.cy) == 1 &&
                                                (getLocIndex(oldcx) - getLocIndex(Board.this.posCheck.cx) == 1 ||
@@ -217,6 +226,13 @@ public class Board extends JComponent
                                     Board.this.posCheck.checker.setType(CheckerType.BLACK_KING);
                               }
 
+                              if(!isFirstMoveOfChain){
+                                  if (Board.this.posCheck.cx != chainPiece.cx || Board.this.posCheck.cy != chainPiece.cy){
+                                      System.out.println("This is not a chain piece");
+                                      //valid = false;
+                                  }
+                              }
+
                                 if (!valid){
                                     Board.this.posCheck.cx = oldcx;
                                     Board.this.posCheck.cy = oldcy;
@@ -233,7 +249,8 @@ public class Board extends JComponent
                                  removedPieces.add(yToRemove);
                                 }
 
-
+                                isFirstMoveOfChain = false;
+                                chainPiece = Board.this.posCheck;
                              repaint();
                           }
                        });
