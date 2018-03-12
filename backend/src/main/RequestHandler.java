@@ -72,7 +72,8 @@ public class RequestHandler extends Thread {
                     // we write to the client thats reading for us
                     ObjectOutputStream os = new ObjectOutputStream(readingclient.getOutputStream());
                     os.writeObject(intArrayList);
-//                    os.close();
+                    os.flush();
+                    os.close();
                 } catch (IOException e1) {
                     e1.printStackTrace();
                 }
