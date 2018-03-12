@@ -187,6 +187,11 @@ public class MainMenu extends JPanel {
                 }
                 counter += 1;
             }
+
+            // reset last piece move to reset possible chain
+            board.lastmovex = -1;
+            board.lastmovey = -1;
+            board.lastposcheck = null;
         };
     }
 

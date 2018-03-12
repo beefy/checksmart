@@ -17,46 +17,40 @@ import javax.swing.JComponent;
 public class Board extends JComponent
 {
    // dimension of checkerboard square (25% bigger than checker)
-
    public final static int SQUAREDIM = (int) (Checker.getDimension() * 1.25);
 
    // dimension of checkerboard (width of 8 squares)
-
    private final int BOARDDIM = 8 * SQUAREDIM;
 
    // preferred size of Board component
-
    private Dimension dimPrefSize;
 
    // dragging flag -- set to true when user presses mouse button over checker
    // and cleared to false when user releases mouse button
-
    private boolean inDrag = false;
 
    // displacement between drag start coordinates and checker center coordinates
-
    private int deltax, deltay;
 
    // reference to positioned checker at start of drag
-
    public PosCheck posCheck;
 
    // center location of checker at start of drag
-
    public int oldcx, oldcy;
 
    // list of Checker objects and their initial positions
-
    public ArrayList<PosCheck> posChecks;
    public ArrayList<Integer> removedPieces;
 
    //check if this is the first checker move
    public boolean isFirstMoveOfChain;
 
-    
+   // store the location of the last move for "chain moves"
+   public int lastmovex = -1;
+   public int lastmovey = -1;
+   public PosCheck lastposcheck;
 
    // player of client
-
    int playernum = -1;
 
    public Board()
@@ -189,67 +183,26 @@ public class Board extends JComponent
                                          }
                                      }
 
+                                 // because the board is always facing the red player,
+                                 // if they try to move the black pieces it should be invalid
                                 }else if(Board.this.posCheck.checker.getType() == CheckerType.BLACK_REGULAR){
                                     valid=false;
-//                                     if(getLocIndex(oldcy) - getLocIndex(Board.this.posCheck.cy) == -1 &&
-//                                             (getLocIndex(oldcx) - getLocIndex(Board.this.posCheck.cx) == 1 ||
-//                                                     getLocIndex(oldcx) - getLocIndex(Board.this.posCheck.cx) == -1)) {
-//
-//                                         valid = true;
-//
-//                                     }else if (getLocIndex(oldcy) - getLocIndex(Board.this.posCheck.cy) == -2 &&
-//                                             getLocIndex(oldcx) - getLocIndex(Board.this.posCheck.cx) == 2) {
-//                                         if (getColorFromLocation((getLocIndex(oldcx) - 1), (getLocIndex(oldcy) + 1)) == CheckerColor.RED) {
-//                                             xToRemove = getLocIndex(oldcx) - 1;
-//                                             yToRemove = getLocIndex(oldcy) + 1;
-//                                             valid = true;
-//                                         }
-//                                     }else if (getLocIndex(oldcy) - getLocIndex(Board.this.posCheck.cy) == -2 &&
-//                                             getLocIndex(oldcx) - getLocIndex(Board.this.posCheck.cx) == -2) {
-//                                         if (getColorFromLocation((getLocIndex(oldcx) + 1), (getLocIndex(oldcy) + 1)) == CheckerColor.RED) {
-//                                             xToRemove = getLocIndex(oldcx) + 1;
-//                                             yToRemove = getLocIndex(oldcy) + 1;
-//                                             valid = true;
-//                                         }
-//                                     }
-
                                 }else if(Board.this.posCheck.checker.getType() == CheckerType.BLACK_KING){
-//                                     if((getLocIndex(oldcy) - getLocIndex(Board.this.posCheck.cy) == -1 ||
-//                                             getLocIndex(oldcy) - getLocIndex(Board.this.posCheck.cy) == 1) &&(
-//                                             (getLocIndex(oldcx) - getLocIndex(Board.this.posCheck.cx) == 1 ||
-//                                                     getLocIndex(oldcx) - getLocIndex(Board.this.posCheck.cx) == -1))) {
-//
-//                                         valid = true;
-//                                     }else if (getLocIndex(oldcy) - getLocIndex(Board.this.posCheck.cy) == -2 &&
-//                                             getLocIndex(oldcx) - getLocIndex(Board.this.posCheck.cx) == 2) {
-//                                         if (getColorFromLocation((getLocIndex(oldcx) - 1), (getLocIndex(oldcy) + 1)) == CheckerColor.RED) {
-//                                             xToRemove = getLocIndex(oldcx) - 1;
-//                                             yToRemove = getLocIndex(oldcy) + 1;
-//                                             valid = true;
-//                                         }
-//                                     }else if (getLocIndex(oldcy) - getLocIndex(Board.this.posCheck.cy) == -2 &&
-//                                             getLocIndex(oldcx) - getLocIndex(Board.this.posCheck.cx) == -2) {
-//                                         if (getColorFromLocation((getLocIndex(oldcx) + 1), (getLocIndex(oldcy) + 1)) == CheckerColor.RED) {
-//                                             xToRemove = getLocIndex(oldcx) + 1;
-//                                             yToRemove = getLocIndex(oldcy) + 1;
-//                                             valid = true;
-//                                         }
-//                                     }else if (getLocIndex(oldcy) - getLocIndex(Board.this.posCheck.cy) == 2 &&
-//                                             getLocIndex(oldcx) - getLocIndex(Board.this.posCheck.cx) == 2) {
-//                                         if (getColorFromLocation((getLocIndex(oldcx) - 1), (getLocIndex(oldcy) - 1)) == CheckerColor.RED) {
-//                                             xToRemove = getLocIndex(oldcx) - 1;
-//                                             yToRemove = getLocIndex(oldcy) - 1;
-//                                             valid = true;
-//                                         }
-//                                     }else if (getLocIndex(oldcy) - getLocIndex(Board.this.posCheck.cy) == 2 &&
-//                                             getLocIndex(oldcx) - getLocIndex(Board.this.posCheck.cx) == -2) {
-//                                         if (getColorFromLocation((getLocIndex(oldcx) + 1), (getLocIndex(oldcy) - 1)) == CheckerColor.RED) {
-//                                             xToRemove = getLocIndex(oldcx) + 1;
-//                                             yToRemove = getLocIndex(oldcy) - 1;
-//                                             valid = true;
-//                                         }
-//                                     }
-                                     valid=false;
+                                    valid=false;
+                                }
+
+                                // check for a chain move, you can only move the same piece twice
+                                if(lastmovex != -1 && lastmovey != -1) {
+                                    if(Board.this.posCheck.cx != lastmovex || Board.this.posCheck.cy != lastmovey) {
+                                        //valid=false; // they tried to move a different piece
+                                        // reset the move graphically
+                                        Board.this.posCheck.cx = oldcx;
+                                        Board.this.posCheck.cy = oldcy;
+                                        // reset the last move in memory to send over server correctly
+                                        oldcx = lastmovex;
+                                        oldcy = lastmovey;
+                                        Board.this.posCheck = lastposcheck;
+                                    }
                                 }
 
 
@@ -268,6 +221,10 @@ public class Board extends JComponent
                                     Board.this.posCheck.cx = oldcx;
                                     Board.this.posCheck.cy = oldcy;
                                     System.out.println("Invalid move");
+                                } else {
+                                    lastmovex = Board.this.posCheck.cx;
+                                    lastmovey = Board.this.posCheck.cy;
+                                    lastposcheck = Board.this.posCheck;
                                 }
 
                                 if (xToRemove != -1){
