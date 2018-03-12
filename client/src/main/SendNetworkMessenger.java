@@ -21,7 +21,7 @@ public class SendNetworkMessenger {
             ObjectOutputStream obs = new ObjectOutputStream(socket.getOutputStream());
             // Send list to server to be filtered
             obs.writeObject(msg);
-
+            obs.flush();
         } catch (UnknownHostException e) {
             e.printStackTrace();
         } catch (IOException e) {
