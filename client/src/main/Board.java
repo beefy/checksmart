@@ -395,7 +395,7 @@ public class Board extends JComponent
    }
 
 
-   private void makeAMove(int y1, int x1, int y2, int x2){
+   public void makeAMove(int y1, int x1, int y2, int x2){
        for (PosCheck posCheck: posChecks)
            if (posCheck.cx == getCenterCoordinate(x1) && posCheck.cy == getCenterCoordinate(y1)) {
                posCheck.cx = getCenterCoordinate(x2);
@@ -405,7 +405,7 @@ public class Board extends JComponent
    }
 
 
-   private int getLocIndex(int loc){
+   public int getLocIndex(int loc){
       return (int) (loc/SQUAREDIM + 0.5) + 1;
    }
 
