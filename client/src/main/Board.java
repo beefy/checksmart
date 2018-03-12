@@ -395,12 +395,12 @@ public class Board extends JComponent
    }
 
 
-   public void makeAMove(int y1, int x1, int y2, int x2){
+   public void makeAMove(int x1, int y1, int x2, int y2){
        for (PosCheck posCheck: posChecks)
-           if (posCheck.cx == getCenterCoordinate(x1) && posCheck.cy == getCenterCoordinate(y1)) {
-               posCheck.cx = getCenterCoordinate(x2);
-               posCheck.cy = getCenterCoordinate(y2);
-               repaint();
+           if (posCheck.cx == getCenterCoordinate(9-x1) && posCheck.cy == getCenterCoordinate(9-y1)) {
+               posCheck.cx = getCenterCoordinate(9-x2);
+               posCheck.cy = getCenterCoordinate(9-y2);
+               revalidate();
            }
    }
 
