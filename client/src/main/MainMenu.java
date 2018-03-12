@@ -114,12 +114,7 @@ public class MainMenu extends JPanel {
 
                 System.out.println("in START-MAINMENU.JAVA [received first move]:" + oldcx + "," + oldcy);
 
-                // move the piece to the new location
-                PosCheck moving = board.getCheckerAt(oldcx, oldcy);
-                moving.cx = newcx;
-                moving.cy = newcy;
-                board.remove(oldcy, oldcy);
-                board.repaint();
+                board.makeAMove(board.getLocIndex(oldcx), board.getLocIndex(oldcy), board.getLocIndex(newcx), board.getLocIndex(newcy));
             }
         };
     }
@@ -157,12 +152,6 @@ public class MainMenu extends JPanel {
 
             System.out.println("in MAKEMOVE-MAINMENU.JAVA [receiving]:"+oldcx+","+oldcy);
 
-            // move the piece to the new location
-            PosCheck moving = board.getCheckerAt(oldcx, oldcy);
-            moving.cx = newcx;
-            moving.cy = newcy;
-            board.remove(oldcy, oldcy);
-            board.repaint();
 
             board.makeAMove(board.getLocIndex(oldcx), board.getLocIndex(oldcy), board.getLocIndex(newcx), board.getLocIndex(newcy));
         };
