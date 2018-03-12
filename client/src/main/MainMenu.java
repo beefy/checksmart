@@ -151,6 +151,13 @@ public class MainMenu extends JPanel {
             movelist.add(board.oldcy);
             movelist.add(board.posCheck.cx);
             movelist.add(board.posCheck.cy);
+
+            // add pieces to remove
+            for(Integer i: board.removedPieces) {
+                movelist.add(i);
+            }
+            board.removedPieces = new ArrayList<Integer>();
+
             sendMsgr.sendmessage(movelist);
 
 
@@ -166,6 +173,20 @@ public class MainMenu extends JPanel {
             System.out.println("in MAKEMOVE-MAINMENU.JAVA [receiving]:"+oldcx+","+oldcy);
 
             board.makeAMove(board.getLocIndex(oldcx), board.getLocIndex(oldcy), board.getLocIndex(newcx), board.getLocIndex(newcy));
+
+            // remove pieces that were sent in addition to regular data
+            int counter = 0;
+            for(Integer i: nextmove) {
+                if(counter < 4) {
+                    // do nothing
+                } else if(counter%2==0) {
+                    // extra pieces to remove
+                    System.out.println("removing after opponent took on "+nextmove.get(counter)+","+nextmove.get(counter+1));
+                    board.remove(board.getCenterCoordinate(9-nextmove.get(counter)),board.getCenterCoordinate(9-nextmove.get(counter+1)));
+                    repaint();
+                }
+                counter += 1;
+            }
         };
     }
 

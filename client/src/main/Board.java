@@ -48,6 +48,7 @@ public class Board extends JComponent
    // list of Checker objects and their initial positions
 
    public ArrayList<PosCheck> posChecks;
+   public ArrayList<Integer> removedPieces;
 
    //check if this is the first checker move
    public boolean isFirstMoveOfChain;
@@ -61,6 +62,7 @@ public class Board extends JComponent
    public Board()
    {
       posChecks = new ArrayList<>();
+      removedPieces = new ArrayList<>();
       dimPrefSize = new Dimension(BOARDDIM, BOARDDIM);
 
       addMouseListener(new MouseAdapter()
@@ -269,6 +271,8 @@ public class Board extends JComponent
 
                                 if (xToRemove != -1){
                                  remove(getCenterCoordinate(xToRemove), getCenterCoordinate(yToRemove));
+                                 removedPieces.add(xToRemove);
+                                 removedPieces.add(yToRemove);
                                 }
 
 
@@ -337,7 +341,10 @@ public class Board extends JComponent
        PosCheck pc = getCheckerAt(xl,yl);
 
        if (pc.checker != null) {
+           System.out.println("poscheck remove debug"+getLocIndex(pc.cx)+","+getLocIndex(pc.cy));
+           System.out.println("poscheck length (before delete):"+posChecks.size());
            posChecks.remove(pc);
+           System.out.println("poscheck length (after delete):"+posChecks.size());
        }else{
            System.out.println("Unable to delete checker.");
        }
@@ -416,7 +423,7 @@ public class Board extends JComponent
       return (int) (loc/SQUAREDIM + 0.5) + 1;
    }
 
-   private int getCenterCoordinate(int loc){
+   public int getCenterCoordinate(int loc){
        return (loc-1)*SQUAREDIM + SQUAREDIM/2;
    }
 
