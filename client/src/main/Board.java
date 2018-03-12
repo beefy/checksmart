@@ -396,12 +396,18 @@ public class Board extends JComponent
 
 
    public void makeAMove(int y1, int x1, int y2, int x2){
-       for (PosCheck posCheck: posChecks)
-           if (posCheck.cx == getCenterCoordinate(x1) && posCheck.cy == getCenterCoordinate(y1)) {
-               posCheck.cx = getCenterCoordinate(x2);
-               posCheck.cy = getCenterCoordinate(y2);
-               repaint();
-           }
+//       for (PosCheck posCheck: posChecks)
+//           if (posCheck.cx == getCenterCoordinate(x1) && posCheck.cy == getCenterCoordinate(y1)) {
+//               posCheck.cx = getCenterCoordinate(x2);
+//               posCheck.cy = getCenterCoordinate(y2);
+//               revalidate();
+//           }
+       // move the piece to the new location
+       PosCheck moving = getCheckerAt(x1,y1);
+       moving.cx = x2;
+       moving.cy = y2;
+       remove(x1, y1);
+       repaint();
    }
 
 
