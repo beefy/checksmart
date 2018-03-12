@@ -2,7 +2,7 @@ package main;
 import java.awt.Color;
 import java.awt.Graphics;
 
-public final class Checker
+public final class Checker implements java.io.Serializable
 {
    private final static int DIMENSION = 50;
 

@@ -1,6 +1,6 @@
 package main;
 
-public enum CheckerType
+public enum CheckerType implements java.io.Serializable
 {
    BLACK_REGULAR,
    BLACK_KING,
