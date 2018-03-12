@@ -22,6 +22,7 @@ public class MainMenu extends JPanel {
 
     private Board board;
     private JButton finishTurnButton;
+    private JButton resignButton;
     private JTextField playernumfield;
 
     private SendNetworkMessenger sendMsgr;
@@ -63,6 +64,7 @@ public class MainMenu extends JPanel {
         playernumfield = new JTextField("");
         add(playernumfield);
 
+        // START MENU BUTTONS
         startButton = new JButton("Start Game");
         startButton.setToolTipText("Begin a game of checkers");
         startButton.addActionListener(start());
@@ -84,10 +86,16 @@ public class MainMenu extends JPanel {
         quitButton.setLocation(0,10);
         add(quitButton);
 
+        // PLAY GAME MENU BUTTONS
         finishTurnButton = new JButton("Make Move");
         finishTurnButton.addActionListener(makeMove());
         finishTurnButton.setBounds(10,10,10,10);
         finishTurnButton.setLocation(0,10);
+
+        resignButton = new JButton("Resign");
+        resignButton.addActionListener(resign());
+        resignButton.setBounds(10,10,10,10);
+        resignButton.setLocation(0,10);
 
         setVisible(true);
 
@@ -97,11 +105,14 @@ public class MainMenu extends JPanel {
     private ActionListener start() {
         return e -> {
 
+            // REMOVE START MENU
             remove(startButton);
             remove(aboutButton);
             remove(quitButton);
+            // ADD IN GAME MENU
             add(board);
             add(finishTurnButton);
+            add(resignButton);
             board.setVisible(true);
             revalidate();
 
@@ -166,6 +177,22 @@ public class MainMenu extends JPanel {
             board.remove(oldcy, oldcy);
             board.repaint();
             //board.makeAMove(board.getLocIndex(oldcx), board.getLocIndex(oldcy), board.getLocIndex(newcx), board.getLocIndex(newcy));
+        };
+    }
+
+    private ActionListener resign() {
+        return e -> {
+            // REMOVE IN GAME MENU
+            remove(board);
+            remove(finishTurnButton);
+            remove(resignButton);
+            board.setVisible(false);
+            // ADD START MENU
+            add(startButton);
+            add(aboutButton);
+            add(quitButton);
+            revalidate();
+            repaint();
         };
     }
 }
