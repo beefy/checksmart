@@ -10,7 +10,7 @@ run:
 # compile all of the files
 # and give them execute permissions
 compile:
-	javac -d ./build/classes ./src/main/*
+	javac -d ./build/classes ./src/main/*.java
 
 clean:
 	rm ./build/classes/main/*
