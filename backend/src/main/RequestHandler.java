@@ -1,6 +1,7 @@
 package main;
 
 import java.io.IOException;
+import java.io.EOFException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
@@ -28,8 +29,6 @@ public class RequestHandler extends Thread {
 
     public void run() {
 
-        System.out.println("reading from " + writingclient.toString() + " and writing to " + readingclient.toString());
-
         // send player numbers to client
         try {
             ArrayList<Integer> player1list = new ArrayList<Integer>();
@@ -50,44 +49,47 @@ public class RequestHandler extends Thread {
             e1.printStackTrace();
         }
 
+        while(true) {
+            System.out.println("reading from " + writingclient.toString() + " and writing to " + readingclient.toString());
 
-        ArrayList<Integer> intArrayList = new ArrayList<>();
-        Object obj = null;
-        try {
-            // we're reading from the client that's writing to us
-            ObjectInputStream is = new ObjectInputStream(writingclient.getInputStream());
-            while ((obj = is.readObject()) != null) {
-                if (obj instanceof ArrayList<?>) {
-                    // for game play
-                    for (Object object : ((ArrayList<?>) obj)) {
-                        if (object instanceof Integer) {
-                            intArrayList.add((Integer) object);
+            ArrayList<Integer> intArrayList = new ArrayList<>();
+            Object obj = null;
+            try {
+                // we're reading from the client that's writing to us
+                ObjectInputStream is = new ObjectInputStream(writingclient.getInputStream());
+                while ((obj = is.readObject()) != null) {
+                    if (obj instanceof ArrayList<?>) {
+                        // for game play
+                        for (Object object : ((ArrayList<?>) obj)) {
+                            if (object instanceof Integer) {
+                                intArrayList.add((Integer) object);
+                            }
                         }
                     }
-                }
+                    System.out.println("received data: " + intArrayList.toString());
 
-                System.out.println("received data: "+intArrayList.toString());
-
-                try {
-                    // we write to the client thats reading for us
-                    ObjectOutputStream os = new ObjectOutputStream(readingclient.getOutputStream());
-                    os.writeObject(intArrayList);
-                    os.flush();
-                    os.close();
-                } catch (IOException e1) {
-                    e1.printStackTrace();
+                    try {
+                        // we write to the client thats reading for us
+                        ObjectOutputStream os = new ObjectOutputStream(readingclient.getOutputStream());
+                        os.writeObject(intArrayList);
+                        os.flush();
+                        System.out.println("wrote data back success");
+                        break;
+                    } catch (IOException e1) {
+                        e1.printStackTrace();
+                    }
                 }
+            } catch (IOException e2) {
+                e2.printStackTrace();
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
             }
-        } catch (IOException e2) {
-            e2.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
 
-        // swap the reading and writing clients to switch the game turn
-        Socket tmpsocket = writingclient;
-        writingclient = readingclient;
-        readingclient = tmpsocket;
+            // swap the reading and writing clients to switch the game turn
+            Socket tmpsocket = writingclient;
+            writingclient = readingclient;
+            readingclient = tmpsocket;
+        }
     }
 
 }

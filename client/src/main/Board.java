@@ -49,6 +49,11 @@ public class Board extends JComponent
 
    public ArrayList<PosCheck> posChecks;
 
+   //check if this is the first checker move
+   public boolean isFirstMoveOfChain;
+
+    
+
    // player of client
 
    int playernum = -1;
@@ -395,12 +400,14 @@ public class Board extends JComponent
    }
 
 
+
    public void makeAMove(int x1, int y1, int x2, int y2){
        for (PosCheck posCheck: posChecks)
            if (posCheck.cx == getCenterCoordinate(9-x1) && posCheck.cy == getCenterCoordinate(9-y1)) {
                posCheck.cx = getCenterCoordinate(9-x2);
                posCheck.cy = getCenterCoordinate(9-y2);
                revalidate();
+               repaint();
            }
    }
 

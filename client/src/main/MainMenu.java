@@ -34,7 +34,7 @@ public class MainMenu extends JPanel {
         // draw the initial gui
         init();
 
-        //initialize the socket
+        // initialize the socket
         Socket socket = null;
         try {
             socket = new Socket(IP_ADDRESS, PORT);
@@ -44,6 +44,7 @@ public class MainMenu extends JPanel {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        // initialize the messengers with the socket
         sendMsgr = new SendNetworkMessenger(socket);
         receiveMsgr = new ReceiveNetworkMessenger(socket);
 
@@ -114,6 +115,7 @@ public class MainMenu extends JPanel {
 
                 System.out.println("in START-MAINMENU.JAVA [received first move]:" + oldcx + "," + oldcy);
 
+                // move the piece to the new location
                 board.makeAMove(board.getLocIndex(oldcx), board.getLocIndex(oldcy), board.getLocIndex(newcx), board.getLocIndex(newcy));
             }
         };
@@ -151,7 +153,6 @@ public class MainMenu extends JPanel {
             int newcy = nextmove.get(3);
 
             System.out.println("in MAKEMOVE-MAINMENU.JAVA [receiving]:"+oldcx+","+oldcy);
-
 
             board.makeAMove(board.getLocIndex(oldcx), board.getLocIndex(oldcy), board.getLocIndex(newcx), board.getLocIndex(newcy));
         };
